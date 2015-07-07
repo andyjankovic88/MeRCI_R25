@@ -1,0 +1,104 @@
+.search-container
+  form.search-flights
+    ul.trip-type
+      li class="trip-type-opt"
+        input name="triptype" type="radio" id="RoundTrip" checked="checked" value="roundtrip"
+        label for="RoundTrip"
+          | Round Trip
+      li class="trip-type-opt"
+        input name="triptype" type="radio" id="OneWay" value="oneway"
+        label for="OneWay"
+          | One Way
+      li class="trip-type-opt"
+        input name="triptype" type="radio" id="MultiCity" value="multicity"
+        label for="MultiCity"
+          | Multi-City
+
+    .flex.flex-wrap
+      .cities
+        .input-field
+          input.airport.outbound id="From" type="text"
+          label for="From" From: City or Airport
+        .input-field
+          input.airport id="To" type="text"
+          label for="To" To: City or Airport
+      .dates
+        .input-field.depart-container
+          input id="Dates" type="text" value="May 22 - May 25"
+
+      a.dropdown-button.pax-picker data-beloworigin="true" data-activates="pax-picker__widget" href="#"
+        span.pax-picker__pax-label#count-person 1 Person
+        span.pax-picker__divider |
+        span.pax-picker__cabin-label#cabin-value Economy
+        i.mdi-navigation-expand-more
+      #pax-picker__widget.dropdown-content.pax-picker__widget
+        .pax-picker__section
+          .pax-picker__heading Passengers
+          .pax-picker__type#pax-adult
+            .pax-picker__label_container
+              span.label Adult
+              span.subtext
+                | (18 - 64)
+            .pax-picker__toggle_container
+              .btn-rocker
+                button.rocker__minus -
+                .rocker__count 1
+                button.rocker__plus +
+          .pax-picker__type#pax-child
+            .pax-picker__label_container
+              span.label Children
+              span.subtext
+                | (2 - 17)
+            .pax-picker__toggle_container
+              .btn-rocker
+                button.rocker__minus -
+                .rocker__count 0
+                button.rocker__plus +
+          .pax-picker__type#pax-senior
+            .pax-picker__label_container
+              span.label Senior
+              span.subtext
+                | (65+)
+            .pax-picker__toggle_container
+              .btn-rocker
+                button.rocker__minus -
+                .rocker__count 0
+                button.rocker__plus +
+          .pax-picker__type#pax-infant
+            .pax-picker__label_container
+              span.label Infant
+              span.subtext
+                | (Under 2)
+            .pax-picker__toggle_container
+              .btn-rocker
+                button.rocker__minus -
+                .rocker__count 0
+                button.rocker__plus +
+        .divider
+        .pax-picker__section
+          .pax-picker__heading Cabin
+          label.FlightSearchMenu__cabin
+            input.FlightSearchMenu__cabin-radio checked="checked" name="cabin" type="radio" value="Economy"
+            | Economy
+          label.FlightSearchMenu__cabin
+            input.FlightSearchMenu__cabin-radio name="cabin" type="radio" value="Business"
+            | Business
+          label.FlightSearchMenu__cabin
+            input.FlightSearchMenu__cabin-radio name="cabin" type="radio" value="First"
+            | First
+
+
+
+      .checkboxes
+        .input-field.col.s12.flex-date-container
+          input type="checkbox" id="FlexCheck"
+          label for="FlexCheck" Flexible Travel Dates
+
+        .input-field.col.s12.reward-check
+          input type="checkbox" id="RewardCheck"
+          label for="RewardCheck" Use Reward Miles
+
+      .search-button
+        a#Search class="waves-effect waves-light btn-large"
+          | Find Flights
+          i class="mdi-notification-sync loading right"

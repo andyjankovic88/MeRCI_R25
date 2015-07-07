@@ -1,0 +1,50 @@
+$transition-speed : 750ms;
+
+.booking-flow {
+    overflow-x: hidden;
+    section.page-transition {
+      float: left;
+      width: 25%;
+    }
+}
+
+.section-container {
+  width: 400%;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-will-change: transform;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translateZ(0);
+  transition: none;
+
+  &.goingBack {
+    transform: translateX(-25%);
+  }
+
+  // Make sure all pages are showing while we are moving
+  &.transitioning {
+    transition: transform $transition-speed ease-in-out;
+
+    &.forwards {
+      transform: translateX(-25%);
+    }
+    &.backwards {
+      transform: translateX(25%);
+    }
+    &.goingBack {
+      transform: translateX(25%);
+      &.backwards {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  .page-transition {
+    display: none;
+    -webkit-transform: translate3d(0,0,0);
+    &.active {
+      display: block;
+    }
+  }
+}

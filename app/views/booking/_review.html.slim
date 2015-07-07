@@ -1,0 +1,175 @@
+=render "partials/static/overlays/sharing"
+
+.container
+  .header-area
+    h4 Finish & Pay
+  .col.s12.readable-width
+    h5 Pay Later
+    p
+      ' You may hold your reservation, free of charge, until 10:00 on Thursday, March 5, 2015. Here's some
+      a href="#" more information
+      '  on paying later.
+    .row
+      .s12.col
+        a.btn.right href="#"
+          | Pay Later
+
+  h5 Pay Now
+
+  form
+    label for="PaymentType" Select a Payment Method
+    .styled-select.constrained-input
+      select.browser-default#PaymentType
+        option value="#CreditType" selected="selected" Credit Card
+        option value="#CheckType" Online Checking
+
+  form.col.s12.m10.offset-m1
+
+    #CreditType.payment-section style="display: block;"
+
+      h4 Credit Card
+      p
+        strong Cardholder Name
+      .row
+        .input-field.col.s6
+          label for="first_name" First Name
+          input#first_name.validate type="text" /
+        .input-field.col.s6
+          label for="last_name" Last Name
+          input#last_name.validate type="text" /
+
+      .divider
+
+      p
+        strong Credit Card
+      .row
+        .input-field.col.s9
+          label for="cc_number" Card Number
+          input#cc_number.cc-number type="text" placeholder="XXXX-XXXX-XXXX-XXXX"
+        .input-field.col.s3
+          label for="cvc_code" CVC Code
+          input#cvc_code.validate type="text"
+      label
+        | Expiration Date
+      .row.exp_date
+        .col.s5.m3
+          .input-field
+            .styled-select
+              select.browser-default id="cc_exp_mm"
+                option value="0" selected="" Month
+                option value="jan" 01
+                option value="feb" 02
+                option value="mar" 03
+                option value="apr" 04
+                option value="may" 05
+                option value="jun" 06
+                option value="jul" 07
+                option value="aug" 08
+                option value="sep" 09
+                option value="oct" 10
+                option value="nov" 11
+                option value="dec" 12
+        .col.s2.m1.slash
+          | /
+        .col.s5.m3
+          .input-field
+            .styled-select
+              select.browser-default id="cc_exp_yy"
+                option value="0" selected="" Year
+                option value="15" 15
+                option value="16" 16
+                option value="17" 17
+                option value="18" 18
+                option value="19" 19
+                option value="20" 20
+                option value="21" 21
+                option value="22" 22
+                option value="23" 23
+                option value="24" 24
+                option value="25" 25
+                option value="26" 26
+                option value="27" 27
+                option value="28" 28
+                option value="29" 29
+                option value="30" 30
+                option value="31" 31
+                option value="32" 32
+                option value="33" 33
+                option value="34" 34
+                option value="35" 35
+      .row
+        .input-field.col.s12
+          input type="checkbox" id="Save_CC"
+          label for="Save_CC"
+            ' Save payment details to
+            a href="#" My Account
+            ' .
+      .divider
+
+      p
+        strong Billing Address
+      =render "partials/formaddress"
+
+      hr
+
+      p
+        strong Discounts
+      .row
+        .input-field.col.s12.promotion-container
+          label for="pc_number" Promotion Code
+          .input-with-button
+            input#pc_number.validate type="text"
+            a#CheckPromo.btn.btn-secondary href="#" Check
+
+          p#PromoMessage.success style="display: none;"
+            | A total discount of $25.50 has been applied to your purchase price.
+
+    #CheckType.payment-section
+      h5 Pay Now with Checking Account
+
+      .row
+        .input-field.col.s12
+          label for="first_name" xxxx-xxx-xxxxx
+          input#first_name.validate type="text" /
+
+    .contain
+
+      hr
+
+      p
+        strong Add Travel Insurance
+      p Would you like to purchase Travel Insurance for $160.00?
+      .hint
+        | By selecting the travel insurance I confirm that I have read, understood and agreed with the terms and conditions and declarations for the insurance application
+        a href="#"  Terms and Conditions
+        |  and
+        a href="#"  Declaration
+        |  for the travel insurance purchase.
+
+      input#ti_yes class="with-gap" name="ti" type="radio" /
+      label for="ti_yes" Yes
+      input#ti_no class="with-gap" name="ti" type="radio" /
+      label for="ti_no" No
+
+      hr
+
+      .row
+        .input-field.col.s12
+          input type="checkbox" id="terms"
+          label for="terms"
+            ' I acknowledge that I have read and understand the
+            a href="#" Airline's Terms and Conditions
+            ' ,
+            a href="#" Fare Family Conditions
+            ' , and will not be carrying any
+            a href="#" Dangerous Goods
+            ' .
+
+  .next-step.contain.confirm-step
+    a.btn.prev-step.back.btn-secondary.has-icon href="#" data-page="services"
+      i.mdi-navigation-arrow-back
+      | Back
+
+    a.btn.continue.has-icon href="/confirm"
+      | Book Reservation
+      i.mdi-navigation-arrow-forward

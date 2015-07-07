@@ -1,0 +1,270 @@
+
+#index-banner.section.no-pad-bot
+  .container
+    br/
+    br/
+    h1.center Component Library
+    .row.center
+      h5.header.col.s12.light A fieldguide for reusable components
+    .row.center
+      a#download-button.btn-large.waves-effect.waves-light href="#" data-to="#section-listing"
+        | Get Started
+        i.mdi-navigation-expand-more
+    br/
+    br/
+
+#section-listing.container
+  .section
+
+    / Typography
+    .row
+      h3.header Typography
+      .card-panel
+        h1 Heading 1
+        h2 Heading 2
+        h3 Heading 3
+        h4 Heading 4
+        h5 Heading 5
+        h6 Heading 6
+
+      p
+        | Text already looks smaller on hand-held devices than on larger devices.
+        | This is fine because people tend to hold small devices closer when reading.
+        | Current popular wisdom is to preserve the measure by further reducing the font sizes for held-held devices.
+        | In practice, retaining a comfortable font size as much as possible better preserves readability.
+        | The result will be a less-than-ideal measure but a more comfortable reading experience.
+
+    / Collapsible / Expandable
+    .row
+      h3.header Collapsible / Expandable
+
+      ul.collapsible data-collapsible="expandable"
+        li
+          .collapsible-header
+            i.mdi-image-filter-drama
+            | First
+          .collapsible-body
+            p Lorem ipsum dolor sit amet.
+        li
+          .collapsible-header
+            i.mdi-maps-place
+            | Second
+          .collapsible-body
+            p Lorem ipsum dolor sit amet.
+        li
+          .collapsible-header
+            i.mdi-social-whatshot
+            | Third
+          .collapsible-body
+            p Lorem ipsum dolor sit amet.
+
+
+    / Media
+    .row
+      .col.s12.m6
+        h3.header Media
+        .card-panel.grey.lighten-5.z-depth-1
+          .row.valign-wrapper
+            .col.s4
+              img.circle.responsive-img alt="JP" src="http://104.236.253.20/wp-content/uploads/2015/01/jp.jpg" /
+              /! notice the "circle" class
+            .col.s8
+              span.black-text
+                | This is a square image. Add the "circle" class to it to make it appear circular.
+
+    / Tables
+    .row
+      h3.header Tables
+      p Tables are borderless by default
+
+      table
+        thead
+          tr
+            th data-field="id"  Name
+            th data-field="name"  Item Name
+            th data-field="price"  Item Price
+        tbody
+          tr
+            td Alvin
+            td Eclair
+            td $0.87
+          tr
+            td Alan
+            td Jellybean
+            td $3.76
+          tr
+            td Jonathan
+            td Lollipop
+            td $7.00
+
+    / Tabs
+    .row
+      h3.header Tabs
+      .col.s12
+        ul.tabs
+          li.tab.col.s3
+            a.active href="#test1"  Test 1
+          li.tab.col.s3
+            a href="#test2"  Test 2
+          li.tab.col.s3
+            a href="#test3"  Test 3
+          li.tab.col.s3
+            a href="#test4"  Test 4
+
+
+    / Buttons
+    .row
+      h3.header Buttons
+
+
+      a.waves-effect.waves-light.btn
+        i.mdi-file-cloud.left
+        | Primary
+      br
+      a.waves-effect.waves-dark.btn.white.light-blue-text.lighten-1
+        i.mdi-file-cloud.right
+        | Secondary
+      br
+      button.btn.waves-effect.waves-light name="action" type="submit"
+        | Submit
+        i.mdi-content-send.right
+      br
+      a.waves-effect.waves-light.btn-large
+        i.mdi-file-cloud.left
+        | Large
+
+      br
+        p Call toast notification
+
+    / Cards
+    .row
+      h3.header Cards
+
+      .row
+        .col.s12.m6
+          .card.white
+            .card-content
+              span.card-title.grey-text Card Title
+              p
+                | I am a very simple card. I am good at containing small bits of information.
+                | I am convenient because I require little markup to use effectively.
+            .card-action
+              a href="#"  This is a link
+              a href="#"  This is a link
+
+    / Collections
+    .row
+      h3.header Collections
+
+      ul.collection
+        a.collection-item href="#!"
+          | Alan
+          span.badge 1
+        a.collection-item href="#!"
+          | Alan
+          span.new.badge 4
+        a.collection-item href="#!"
+          | Alan
+          a.collection-item href="#!"
+            | Alan
+            span.badge 14
+
+    / Forms
+    .row
+
+      form.col.s12.inline
+        .row
+          h3.header Forms
+
+          .input-field.col.s6
+            input#first_name.validate type="text" /
+            label for="first_name"  First Name
+          .input-field.col.s6
+            input#last_name.validate type="text" /
+            label for="last_name"  Last Name
+        .row
+          .input-field.col.s12
+            input#username.validate type="text" /
+            label for="username"  Username
+        .row
+          .input-field.col.s12
+            input#password.validate type="password" /
+            label for="password"  Password
+        .row
+          .input-field.col.s12
+            input#email.validate type="email" /
+            label for="email"  Email
+
+        .row
+          h5.col.12 style="margin-bottom: 1em;" Invalid Form Style
+          .input-field.col.s12
+            input#emailValid.validate.invalid value="sue@" type="email" /
+            label for="emailValid"  Email
+
+        .row
+          h3.header Radio Selects
+          p
+            input#test1.with-gap name="group1" type="radio" /
+            label for="test1"  Red
+          p
+            input#test2.with-gap name="group1" type="radio" /
+            label for="test2"  Yellow
+          p
+            input#test3.with-gap name="group1" type="radio" /
+            label for="test3"  Green
+          p
+            input#test4 disabled="disabled" name="group1" type="radio" /
+            label for="test4"  Brown
+
+        .row
+          form action="#"
+            h3.header Range Field
+            p.range-field
+              input#test5 max="100" min="0" type="range" /
+
+    / Datepicker in progress
+    .row
+      form.col.s12.m6 action="#"
+        h3.header Datepicker
+
+        form
+          label Departure
+          input.datepicker type="date"
+
+    .row
+      h3.header Depth
+      .col.s12.m2
+        p.z-depth-1 z-depth-1
+      .col.s12.m2
+        p.z-depth-2 z-depth-2
+      .col.s12.m2
+        p.z-depth-3 z-depth-3
+      .col.s12.m2
+        p.z-depth-4 z-depth-4
+      .col.s12.m2
+        p.z-depth-5 z-depth-5
+
+
+    .row
+      h3.header Global Warning
+    =render "partials/static/globalwarning"
+
+    br
+    hr
+    br
+
+    .row
+      h3.header
+        | Flight Listing
+      style
+        | .search-results { display: block!important;} .search-results * {opacity: 1!important;}
+      .col.s12
+        =render "partials/departresults"
+
+    .row
+      h3.header
+        | Alt Flex OWC View
+      style
+        | .matrix-results-alt { display: block!important;}
+      .col.s12.m2 style="max-width: 400px;"
+        =render "partials/departresultsflexalt"

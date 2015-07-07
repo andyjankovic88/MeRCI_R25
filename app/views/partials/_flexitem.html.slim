@@ -1,0 +1,28 @@
+- class2 = "day"
+- if defined? lowest & lowest == true then
+    - class2 = "day lowest"
+
+- showMore = flights - 5
+
+li class="#{class2}"
+  .flight-info.waves-effect
+    .date
+      .day-week
+        = dayweek
+      .day
+        = day
+      .month
+        = month
+
+    .flight-count
+      span
+        = flights
+        |  Flights
+
+    .price
+      span.starts-at
+        | Starts at
+      .price-container
+        sup $
+        span
+          = price

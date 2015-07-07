@@ -1,0 +1,93 @@
+.card.flight-summary
+  header
+    h1
+      | Your Departing Flight
+    h2
+      span.location Tokyo
+      span.code
+        | (HND)
+      span.sep
+        | -
+      span.location Nice
+      span.code
+        | (NCE)
+
+    .summary
+      .depart
+        .date
+          | Feb 24
+        .day
+          | Saturday
+
+      .price-class
+        .price
+          sup $
+          span
+            | 249
+        .class
+          | Economy
+
+  .detail
+    .collapsible data-collapsible="accordion"
+      .collapsible-header
+        .segment-info
+          .strong
+            | Haneda Intl (HND) - Nice Intl (NCE)
+          ul.time-details
+            li.time 12:05pm - 5:15am
+            li.duration 17h 0m
+            li.stops 2 Stops
+            li.ff Economy
+        .more-action
+          i.mdi-navigation-expand-more.more-icon-segment
+
+      .collapsible-body
+        = render "partials/segments"
+        = render "partials/bags"
+
+.card.flight-summary
+  header
+    h1
+      | Your Returning Flight
+    h2
+      span.location Nice
+      span.code
+        | (NCE)
+      span.sep
+        | -
+      span.location Tokyo
+      span.code
+        | (HND)
+
+    .summary
+      .depart
+        .date
+          | Feb 26
+        .day
+          | Monday
+
+      .price-class
+        .price
+          sup $
+          span
+            | 249
+        .class
+          | Economy
+
+  .detail
+    .collapsible data-collapsible="accordion"
+      .collapsible-header
+        .segment-info
+          .strong
+            | Haneda Intl (HND) - Nice Intl (NCE)
+          ul.time-details
+            li.time 12:05pm - 5:15am
+            li.duration 17h 0m
+            li.stops 2 Stops
+            li.ff Economy
+        .more-action
+          i.mdi-navigation-expand-more.more-icon-segment
+
+      .collapsible-body
+        = render "partials/segments"
+        = render "partials/bags"

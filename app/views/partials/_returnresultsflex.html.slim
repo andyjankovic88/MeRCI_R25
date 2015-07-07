@@ -1,0 +1,31 @@
+.search-results.flex-container.return
+  .container.sm-full-width
+
+    .messaging-container.image-bg
+      h5
+        | Select Return Date
+      h6
+        ' Nice
+        span.airport-code
+          ' (NCE)
+        ' -
+        ' Tokyo
+        span.airport-code
+          | (HND)
+
+      p.disclaimer
+        ' All prices are per passenger and do not include taxes or fees.
+        ' Additional
+        a href="#" baggage fees
+        |  may apply.
+
+    / = render :partial => 'partials/filterbarflex', :locals => { :inBoundOutbound => "Return", :cssClass => "return" }
+
+    ul.flexible-listing
+      = render :partial => 'partials/flexitem', :locals => {:dayweek => "Mon", :day => "23", :month => "Feb", :duration => "8h 57m", :flights => 29, :price => 249, :lowest => true}
+      = render :partial => 'partials/flexitem', :locals => {:dayweek => "Tue", :day => "24", :month => "Feb", :duration => "8h 52m", :flights => 6, :price => 289}
+      = render :partial => 'partials/flexitem', :locals => {:dayweek => "Wed", :day => "25", :month => "Feb", :duration => "8h 50m", :flights => 9, :price => 329}
+      = render :partial => 'partials/flexitem', :locals => {:dayweek => "Thu", :day => "26", :month => "Feb", :duration => "8h 49m", :flights => 13, :price => 349}
+      = render :partial => 'partials/flexitem', :locals => {:dayweek => "Fri", :day => "27", :month => "Feb", :duration => "8h 32m", :flights => 8, :price => 402}
+      = render :partial => 'partials/flexitem', :locals => {:dayweek => "Sat", :day => "28", :month => "Feb", :duration => "8h 27m", :flights => 9, :price => 515}
+      = render :partial => 'partials/flexitem', :locals => {:dayweek => "Sun", :day => "1",  :month => "Mar", :duration => "8h 02m", :flights => 7, :price => 749}

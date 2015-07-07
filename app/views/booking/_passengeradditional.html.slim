@@ -1,0 +1,23 @@
+.container
+
+  =render "partials/passengersummary"
+
+  .header-area
+    h4 Add an Additional Passenger
+
+  form.additional-passenger
+    =render "partials/passengerff"
+    hr
+    =render "partials/passengerinput"
+
+    =render :partial => 'partials/passengerapis', :locals => { :additionalPassenger => true }
+
+  .next-step.contain
+
+    a.btn.prev-step.back.btn-secondary.has-icon href="#" data-page="passenger"
+      i.mdi-navigation-arrow-back
+      | Back
+
+    a.btn.continue.has-icon data-page="services"
+      | Continue
+      i.mdi-navigation-arrow-forward

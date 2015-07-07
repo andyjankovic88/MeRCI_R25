@@ -1,0 +1,85 @@
+#fb_modal.modal.sharing
+  .modal-content
+    .content
+      | The content of this modal should replaced with the
+      a href="https://developers.facebook.com/docs/sharing/reference/share-dialog" target="_blank"
+        |  Facebook Share Dialog
+      | .
+  .modal-footer
+    a.modal-action.modal-close href="#"  Close
+
+#tw_modal.modal.sharing
+  .modal-content
+    .content
+      | The content of this modal should replaced with the
+      a href="https://dev.twitter.com/web/tweet-button" target="_blank"
+        |  Twitter Share Dialog
+      | .
+
+  .modal-footer
+    a.modal-action.modal-close href="#"  Close
+
+#gp_modal.modal.sharing
+  .modal-content
+    .content
+      | The content of this modal should replaced with the
+      a href="https://developer.linkedin.com/docs/share-on-linkedin" target="_blank"
+        |  Google Plus Share Dialog
+      | .
+  .modal-footer
+    a.modal-action.modal-close href="#"  Close
+
+#li_modal.modal.sharing
+  .modal-content
+    .content
+      | The content of this modal should replaced with the
+      a href="https://developer.linkedin.com/docs/share-on-linkedin" target="_blank"
+        |  LinkedIn Share Dialog
+      | .
+
+  .modal-footer
+    a.modal-action.modal-close href="#"  Close
+
+#em_modal.modal.sharing
+  .header-area
+    h5 Share via Email
+  .modal-content
+    form.sharing-method
+      section
+        .input-field.email
+          label for="email_to" Recipient Email
+          input#email_to.validate type="text" placeholder="recipient@domain.com"
+
+        .input-field.email
+          label for="email_from" Your Email
+          input#email_from.validate type="text" placeholder="you@domain.com"
+
+      .input-field.message
+        label for="email_message" Your Message
+        textarea#email_message I have booked a flight to Nice on Monday, February 26th on MeRCI Airlines.
+  .modal-footer
+    a.modal-action.modal-close href="#" Cancel
+    submit.btn Send Message
+
+#sms_modal.modal.sharing
+  .header-area
+    h5 Share via Text Message (SMS)
+  .modal-content
+    form.sharing-method
+      section
+        .input-field.country-code
+          label Country Code
+          .styled-select
+            select.browser-default name="countryCode"
+              = render "partials/static/countrycode"
+
+        .input-field.phone-number
+          label for="sms_no" Phone Number
+          input#sms_no.validate type="text" placeholder="555-555-5555"
+          p.hint Please include area code. Message and data rates may apply.
+      .input-field.message
+        label for="sms_message" Your Message
+        textarea#sms_message I have booked a flight to Nice on Monday, February 26th on MeRCI Airlines.
+  .modal-footer
+    a.modal-action.modal-close href="#" Cancel
+    submit.btn Send Message

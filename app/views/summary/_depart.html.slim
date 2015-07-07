@@ -1,0 +1,74 @@
+.flight-item.active
+  .details.contain
+    .time
+      time 9:01am
+      span.sep |
+      time 2:39pm
+    .duration
+      span 5h 38m
+    .stops
+      span 1 stop
+    .price
+      .price-container
+        sup $
+        span 249
+  .flight-details
+    .route-info
+      .leg.depart
+        .air-info.contain
+          time
+            | 9:01am
+            label DEPARTURE
+          h4
+            | JFK
+            label
+              | John F. Kennedy Intl
+          .flight-no
+            | DN331
+            label FLIGHT NO.
+          .plane-type
+            i.mdi-device-airplanemode-on
+            | Boeing 747
+            label PLANE
+
+      .leg.layover
+        .air-info.contain
+          time
+            | 1:15pm
+            label CONNECTION
+          h4
+            | DEN
+          p
+            | Denver International
+          .flight-no
+            | DN331
+            label FLIGHT NO.
+          .plane-type
+            i.mdi-device-airplanemode-on
+            | Boeing 747
+            label PLANE
+        .between-flights
+          strong 1h 45m
+          label LAYOVER
+      .leg.arrive
+        .air-info.contain
+          time
+            | 2:39pm
+            label ARRIVAL
+          h4
+            | NCE
+          p
+            | Nice Côte d'Azur International
+          .flight-no
+            | DN331
+            label FLIGHT NO.
+          .plane-type
+            i.mdi-device-airplanemode-on
+            | Boeing 747
+            label PLANE
+    .total-duration
+      | 5h 38m
+      label TOTAL TRIP
+
+    .actions
+      a.btn.left.btn-secondary.cancel href="#" Cancel

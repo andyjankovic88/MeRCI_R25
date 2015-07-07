@@ -1,0 +1,99 @@
+.matrix-results.search-results.return
+
+  .container.sm-full-width
+    = render :partial => 'partials/filterbarmatrix', :locals => { :inBoundOutbound => "Return", :cssClass => "return" }
+
+    table.matrix.responsive-table
+      thead
+        tr
+          // First Column has no data
+          th.empty
+            | &nbsp
+
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Sat", :day => "22",  :month => "Oct" }
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Sun", :day => "23",  :month => "Oct" }
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Mon", :day => "24",  :month => "Oct" }
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Tue", :day => "25",  :month => "Oct", :active => true }
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Wed", :day => "26",  :month => "Oct" }
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "27",   :month => "Oct" }
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Fri", :day => "28",   :month => "Oct" }
+
+
+      tbody
+
+        tr
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "27",  :month => "Oct" }
+
+          = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "624" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "984" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "886" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "734" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "902" }
+
+        tr
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "28",  :month => "Oct" }
+
+          = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "624" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "984" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "886" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "734" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "902" }
+
+        tr
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "29",  :month => "Oct" }
+
+          = render :partial => 'partials/matrix/item', :locals => {:price => "734" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "727" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "804" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "857" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "629" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "826" }
+
+        tr
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "30",  :month => "Oct", :active => true }
+
+          = render :partial => 'partials/matrix/item', :locals => {:price => "709" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "824" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "843" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "809", :selected => true }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "708" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "698" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "705" }
+
+        tr
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "31",  :month => "Oct" }
+
+          = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "624" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "984" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "886" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "734" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "902" }
+
+        tr
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "1",  :month => "Nov" }
+
+          = render :partial => 'partials/matrix/item', :locals => {:price => "709" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "824" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "843" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "809" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "708" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "698" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "705" }
+
+        tr
+          = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "2",  :month => "Nov" }
+
+          = render :partial => 'partials/matrix/item', :locals => {:price => "709" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "824" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "843" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "809" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "708" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "698" }
+          = render :partial => 'partials/matrix/item', :locals => {:price => "705" }

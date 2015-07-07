@@ -1,0 +1,16 @@
+{
+  "name": "MeRCI R25",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "rome": "~2.1.17",
+    "moment": "~2.10.3",
+    "jquery.scrollTo": "~2.1.0",
+    "jquery-throttle-debounce": "https://github.com/cowboy/jquery-throttle-debounce.git",
+    "jquery.payment": "~1.2.3",
+    "velocity": "~1.2.2",
+    "rangeslider.js": "~1.2.1",
+    "intl-tel-input": "~5.8.7",
+    "materialize": "~0.96.1"
+  }
+}

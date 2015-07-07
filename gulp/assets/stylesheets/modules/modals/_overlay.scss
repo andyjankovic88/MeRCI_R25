@@ -1,0 +1,155 @@
+body.overlay-active {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  &.active {
+    pointer-events: all;
+
+    nav {
+      top: 0;
+      opacity: 1;
+    }
+    .overlay-container {
+      top: 0;
+      opacity: 1;
+      overflow-y: scroll;
+      background: #f3f3f3;
+      .header-area {
+        text-align: center;
+        margin-bottom: 2em;
+      }
+    }
+  }
+
+  nav {
+    position: absolute;
+    top: -5em;
+    transition: all 450ms ease-in-out;
+    z-index: 9;
+    opacity: 0;
+    a.back-button {
+      font-size: 2em;
+      position: relative;
+      left: -0.25em;
+      float: left;
+    }
+    .nav-heading {
+      float: left;
+      font-size: 1.25em;
+      margin: 0.625em 0 0 0.5em;
+      font-weight: 300;
+    }
+  }
+
+  .overlay-container {
+    height: 100%;
+    width: 100%;
+    padding-top: 4em;
+    top: 100%;
+    transition: all 450ms ease-in-out;
+    position: fixed;
+    background: #FFF;
+    opacity: 0;
+    .container {
+      padding: .5em
+    }
+    .intro-image {
+      padding: 8em;
+      background-size: cover;
+      background-position: 50%;
+      position: relative;
+      z-index: 5;
+
+      &.gradient {
+        :after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+          pointer-events: none;
+          opacity: 1;
+          z-index: -1;
+        }
+      }
+      h3 {
+        position: absolute;
+        bottom: 0em;
+        left: 1em;
+        color: #FFF;
+        font-size: 1.5em;
+        font-weight: 300;
+        z-index: 3;
+      }
+    }
+
+  }
+}
+
+.overlay-modal {
+  background: #EEE;
+  position: fixed;
+  transition: transform .3s cubic-bezier(.62,.28,.23,.99);
+  transform: translateY(100%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: scroll;
+  padding: 0.5em 1em;
+  z-index: 10;
+  &.with-header {
+    top: $navbar-height;
+  }
+  &.active {
+    transform: translateY(0);
+  }
+  &.no-animate {
+    transition: none;
+  }
+}
+
+nav.for-overlay {
+  position: fixed;
+  transition: transform .3s cubic-bezier(.62,.28,.23,.99);
+  transform: translateY(-100%);
+  z-index: 999;
+  top: 0;
+  overflow: hidden;
+  line-height: 3.5em;
+  &.active {
+    transform: translateY(0);
+  }
+
+  .back-button {
+    float: left;
+    width: 15%;
+    line-height: $navbar-height;
+    height: $navbar-height;
+    i {
+      font-size: 2em;
+      color: white;
+    }
+  }
+  .nav-heading {
+    font-size: 1.25em;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    float: left;
+    width: 70%;
+    line-height: $navbar-height;
+    margin: 0;
+    color: white;
+  }
+}

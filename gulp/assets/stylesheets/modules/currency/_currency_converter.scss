@@ -1,0 +1,28 @@
+.currency-converter {
+  select {
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+}
+
+nav .currency-converter {
+  float: right;
+  padding-right: 0.25em;
+  margin-right: 1em;
+  select {
+    color: $link-blue;
+    background: transparent;
+    border: none;
+    height: auto;
+    line-height: 43px;
+    font-weight: 300;
+
+    @media (min-width: 601px) {
+      line-height: 48px;
+    }
+  }
+  &:after {
+    top: 0;
+  }
+}

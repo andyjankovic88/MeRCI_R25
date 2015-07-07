@@ -1,0 +1,37 @@
+li.expand-details
+  .line-item
+    span
+      | Meals
+    i.mdi-navigation-expand-more.right.more-icon
+  .breakdown
+    ul
+      li
+        .passenger-name
+          | Gregory Cevear
+        .passenger-choice
+          a.dropdown-button.text href="#" data-activates='meal_options' Options
+
+          ul#meal_options.dropdown-content.passenger-detail-dropdown
+            li
+              a href="#"
+                i.mdi-editor-mode-edit
+                | Change
+              a href="#"
+                i.mdi-navigation-cancel
+                | Remove
+          | Vegetarian
+      li
+        .passenger-name
+          | Matt Ludwig
+        .passenger-choice
+          a.dropdown-button.text href="#" data-activates='meal_options' Options
+
+          ul#meal_options.dropdown-content.passenger-detail-dropdown
+            li
+              a href="#"
+                i.mdi-editor-mode-edit
+                | Change
+              a href="#"
+                i.mdi-navigation-cancel
+                | Remove
+          | Chicken

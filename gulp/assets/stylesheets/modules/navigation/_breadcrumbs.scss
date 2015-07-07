@@ -1,0 +1,104 @@
+nav.breadcrumbs {
+  margin-bottom: 1em;
+  margin: 0 auto;
+  height: auto;
+  line-height: normal;
+  box-shadow: none;
+  font-size: 0.875em;
+  background: none;
+  z-index: 3;
+  position: relative;
+  &.container {
+    padding: 3em 1.5em 1.75em;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    font-size: 60%;
+    position: relative;
+    li {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      font-size: 220%;
+      text-align: center;
+      padding-top: 0;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+      &:first-child {
+        position: relative;
+        left: -0.125em;
+      }
+      &.active {
+        border-bottom: none;
+        background: none;
+        span {
+            background: $link-blue;
+            color: $white;
+        }
+        &:after {
+          content: "";
+          display: none;
+        }
+        ~ li {
+          &:after {
+            content: "";
+            display: none;
+          }
+        }
+      }
+      &:after {
+        content: "\e899";
+        font-family: "Material-Design-Icons";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #001a37;
+        color:#FFF;
+        border-radius: 200px;
+        font-size: 1.25em;
+        padding-top: 0.185em;
+        border: 2px solid $midnight-blue;
+        @media (min-width: 660px) {
+          padding-top: 0.25em;
+        }
+      }
+      span {
+        background: $white;
+        border-radius: 1em;
+        border: 2px solid $midnight_blue;
+        height: 2em;
+        width: 2em;
+        line-height: 2;
+        font-size: 100%;
+        color: $midnight_blue;
+        display: inline-block;
+        &:after {
+            background: none !important;
+        }
+      }
+      label {
+        font-size: 11px;
+        color: #999;
+        font-weight: 300;
+        margin-top: 6px;
+      }
+    }
+  }
+}
+
+nav.breadcrumbs ul:after {
+  content: " ";
+  position: absolute;
+  height: 2px;
+  background: $midnight-blue;
+  left: 0;
+  right: 0;
+  top: 2em;
+  z-index: -1;
+}

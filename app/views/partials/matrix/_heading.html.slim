@@ -1,0 +1,11 @@
+- classCurrent = ""
+- if defined? active & active == true then
+    - classCurrent = "current"
+
+th class="#{classCurrent}"
+  span.day-week
+    = dayweek
+  span.day
+    = day
+  span.month
+    = month

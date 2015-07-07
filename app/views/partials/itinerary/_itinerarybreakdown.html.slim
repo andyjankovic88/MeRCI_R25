@@ -1,0 +1,25 @@
+.segments
+  h3.trip-header
+    = departReturn
+
+  = render :partial => "partials/segment_indicator"
+
+  ul.segment
+
+    = render :partial => "partials/segment_detail", :locals => { :segment_locations => "Tokyo (HND) - Osaka (KIX)", :segment_duration => "1h 20m", :segment_time => "12:05pm - 1:15pm", :segment_number => "ANA 3823", :segment_plane => "Airbus A320", :segment_gate => "Gate B20" }
+
+  = render "partials/itinerary/layover"
+
+  ul.segment
+
+    = render :partial => "partials/segment_detail", :locals => { :segment_locations => "Osaka (KIX) - San Francisco (SFO)", :segment_duration => "2h 10m", :segment_time => "3:05pm - 5:15pm", :segment_number => "ANA 953", :segment_plane => "Boeing 747", :segment_gate => "Gate A3" }
+
+    li.warning Often delayed by 30 minutes
+
+  = render "partials/itinerary/layover", locals: { layover_location: "San Franciso (SFO) • 1h 20m" }
+
+  ul.segment
+
+    = render :partial => "partials/segment_detail", :locals => { :segment_locations =>  "San Francisco (SFO) - Nice (NCE)", :segment_duration => "10h 10m", :segment_time => "7:05pm - 5:15am", :segment_number => "ANA 7553", :segment_plane => "Boeing 747", :segment_gate => "Gate D12" }
+
+    li.warning Overnight Flight

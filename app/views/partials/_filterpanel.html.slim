@@ -1,0 +1,74 @@
+#FilterPanel.filter-panel
+  .content
+    .header-container
+      .container
+        h3
+          | Filter Results
+          i.mdi-navigation-close.right.close-panel
+
+    .container
+      .col.s12
+        form.filter-results
+
+          .input-field
+            .label-container.range-label
+              span
+                ' Maximum Price
+                span.update-field
+                  |  ($
+                  span.update-value
+                  span
+                    | )
+
+            p.range-field
+              input type="range" min="249" max="641" value="641"
+
+            .annotations
+              span $249
+              span
+              span
+              span $641
+
+          .input-field.range-label
+            .label-container
+              span
+                ' Maximum Stops
+              span.update-field
+                |  (
+                span.update-value
+                |  Stops)
+
+            p.range-field
+              input type="range" min="0" max="3" value="3"
+
+            .annotations
+              span 0
+              span 1
+              span 2
+              span 3
+
+          .input-field.range-label
+            .label-container
+              span
+                ' Maximum Trip Duration
+              span.update-field
+                |  (
+                span.update-value
+                |  Hours)
+
+
+            p.range-field
+              input type="range" min="1" max="4" value="4"
+
+            .annotations
+              span 1 Hour
+              span
+              span
+              span 4 Hours
+
+          .input-field.drawer-footer
+            a.btn.left.btn-secondary href="#" id="ResetFilters"
+              | Reset
+
+            a.btn.right id="ActivateFilters"
+              | Update Results

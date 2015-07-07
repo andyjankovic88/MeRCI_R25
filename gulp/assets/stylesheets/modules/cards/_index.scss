@@ -1,0 +1,27 @@
+@import "flights";
+@import "search_summary";
+@import "confirm";
+@import "passenger";
+
+.card {
+  margin: 0 .75em 1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  header {
+    text-align: center;
+    padding: 1.5em .75em;
+    border-bottom: 1px solid $border-color;
+    h1 {
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.25em;
+      line-height: 1;
+      margin: .5em 0 0;
+    }
+  }
+  .detail {
+  }
+}

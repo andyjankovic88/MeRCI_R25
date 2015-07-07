@@ -1,0 +1,52 @@
+.search-results.all-container.itinerary
+  .container.sm-full-width
+
+    .messaging-container.image-bg
+      h5
+        | Select Your Itinerary
+      h6
+        ' Tokyo
+        span.airport-code
+          ' (HND)
+        ' -
+        ' Nice
+        span.airport-code
+          | (NCE)
+
+      .date-display
+        .date-container
+          span.month
+            | Feb 24
+          span.day
+            | Saturday
+
+        .date-separator
+          i.mdi-navigation-arrow-forward
+
+        .date-container.last
+          span.month
+            | Feb 28
+          span.day
+            | Sunday
+
+      p.disclaimer
+        ' All prices are per passenger and do not include taxes or fees.
+        ' Additional
+        a href="#" baggage fees
+        |  may apply.
+
+      = render :partial => 'partials/filterbar', :locals => { :inBoundOutbound => "Depart", :cssClass => "depart" }
+
+    .flights
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 50m", :flights => "5", :price => 249, :lowest => true}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 57m", :flights => "5", :price => 329}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "9h 01m", :flights => "5", :price => 349}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 45m", :flights => "5", :price => 447}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 47m", :flights => "5", :price => 545}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 52m", :flights => "5", :price => 549}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 50m", :flights => "5", :price => 629}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "10h 11m", :flights => "5", :price => 631}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 12m", :flights => "5", :price => 639}
+      = render :partial => 'home/search/results/flightitem_itin', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "6h 40m", :flights => "5", :price => 641}
+
+      = render "partials/loadingindicator"

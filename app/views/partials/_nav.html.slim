@@ -1,0 +1,45 @@
+#header-nav.navbar-fixed
+  nav.top-nav
+    .container
+      .nav-wrapper
+        .col.s12
+          a.brand-logo href="/"  MeRCI Airlines
+
+          a#nav-menu-button.button-collapse.right data-activates="mobile-demo" href="#"
+            i.mdi-navigation-menu
+
+          .currency-converter.styled-select
+            = render "/partials/utilities/currencyconverter"
+
+          ul#mobile-demo.side-nav
+            li.nav
+              a href="#"
+                i.mdi-navigation-close
+            li
+              a href="#"
+                | Book Flight
+                i.mdi-maps-flight
+            li
+              a href="#"
+                | Check-in
+                i.mdi-maps-beenhere
+            li
+              a href="#"
+                | My Trip
+                i.mdi-maps-location-history
+            li
+              a href="#"
+                | Flight Status
+                i.mdi-action-announcement
+            li
+              a href="#"
+                | Time Table
+                i.mdi-device-access-time
+            li
+              a href="/?itn=1"
+                | Itinerary Mode
+                i.mdi-navigation-apps
+            li
+              = link_to destroy_user_session_path, :method => :delete
+                | Sign Out
+                i.fa.fa-sign-out

@@ -1,0 +1,7 @@
+.flight-details.expandable
+  = render :partial => 'partials/itinerary/itinerarybreakdown', :locals => { :departReturn => "Departing Trip"}
+  = render :partial => 'partials/itinerary/itinerarybreakdown', :locals => { :departReturn => "Returning Trip"}
+
+  .actions
+    a.cancel.center href="#"
+      | CLOSE

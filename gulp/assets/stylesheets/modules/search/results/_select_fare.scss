@@ -1,0 +1,133 @@
+// Fare Families
+.fare-family-select {
+  float: none;
+  // temporary
+  width: 100% !important;
+  > ul {
+    > li {
+      overflow: hidden;
+      border-bottom: 1px solid #CCC;
+      padding: 0.5em;
+      .actions {
+        float: left;
+        .btn {
+          margin: 0;
+          font-size: 0.875em;
+          min-width: 10em;
+        }
+      }
+      .price-container {
+        float: right;
+        .price {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+// Results Panel
+.card.results {
+  overflow: hidden;
+  > h3 {
+    color: #2196F3;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1;
+    margin: 1em 0 1em 4.75em;
+  }
+}
+
+.family-accordion {
+  margin-top: 0;
+  li {
+    &.economy {
+      .collapsible-header {
+        border-left: 5px solid $ecoColor;
+
+      }
+    }
+    &.economyplus {
+      .collapsible-header {
+        border-left: 5px solid $ecoPlusColor;
+      }
+    }
+    &.business {
+      .collapsible-header {
+        border-left: 5px solid $busColor;
+      }
+    }
+
+    .collapsible-header {
+      font-size: 1.125em;
+      height: auto;
+      padding: 0.25em 1em;
+      font-weight: 400;
+    }
+  }
+}
+
+ul.fare-select {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid $border-color;
+  > li {
+    padding: .75em;
+    overflow: hidden;
+    border-top: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .seatleft {
+      color: $orange!important;
+      font-size: .875em;
+      float: right;
+      font-weight: normal;
+      margin-left: auto;
+      margin-right: 1em;
+    }
+    .btn {
+      float: right;
+      margin-bottom: 0;
+      color: $white;
+      span {
+        font-weight: 500;
+        font-size: 1.25em;
+      }
+    }
+    &.economy {
+      label {
+        color: $ecoColor;
+      }
+      a.btn {
+        background: $ecoColor;
+      }
+    }
+    &.eco-plus {
+      label {
+        color: $ecoPlusColor;
+      }
+      a.btn {
+        background: $ecoPlusColor;
+      }
+    }
+    &.business {
+      label {
+        color: $busColor;
+      }
+      a.btn {
+        background: $busColor;
+      }
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 1.25em;
+      float: left;
+      i {
+        color: $link-blue;
+        margin-left: .25em;
+      }
+    }
+  }
+}

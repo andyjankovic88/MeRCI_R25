@@ -1,0 +1,163 @@
+$stripeColor : #EEE;
+$elSize : 4em;
+$currentBgColor : $dark-gray;
+$currentColor : #FFF;
+
+.matrix-results,
+.matrix-results-alt {
+
+  display: none;
+  margin-bottom: 2em;
+
+  table.matrix {
+
+
+    thead {
+      border-right: none;
+      tr {
+        padding: 0;
+        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.125);
+        z-index: 99;
+        position: relative;
+        border-right: none;
+      }
+    }
+
+    th {
+      text-align: center;
+      padding: 0.33em;
+      height: $elSize;
+      width: $elSize;
+      > span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-weight: 400;
+      }
+      span.day-week {
+        font-size: 0.75em;
+      }
+      span.day {
+        font-size: 1.25em;
+        line-height: 0.875;
+
+      }
+
+      span.month {
+        font-size: 0.75em;
+      }
+      &.current {
+        background: $currentBgColor;
+        color: $currentColor;
+      }
+    }
+
+    tbody {
+      > tr {
+        padding: 0;
+
+        > td {
+          text-align: center;
+          padding: 0;
+          height: $elSize;
+          width: $elSize;
+          &.selected {
+            border: 1px dashed #999;
+          }
+          &.active {
+            color: #FFF;
+            background : #2196F3!important;
+            border: none;
+            span.price {
+              color: #FFF;
+            }
+          }
+          &.lowest {
+            color: #093;
+            .price {
+              position: relative;
+              top: -0.35em;
+              &:after {
+                content: "lowest";
+                position: absolute;
+                border: 1px solid #093;
+                color: #093;
+                background: white;
+                display: inline-block;
+                font-size: 0.55em;
+                bottom: -1.75em;
+                left: 0.5em;
+                right: 0;
+                margin: 0 auto;
+                padding: 0.0125em 0em;
+                width: 4.5em;
+                text-align: center;
+              }
+            }
+          }
+          > span {
+            display: block;
+            padding-top: $elSize / 3;
+          }
+        }
+
+        // Striping
+        &:nth-child(even) {
+
+          > td {
+            &:nth-child(even) {
+              background: $stripeColor;
+            }
+          }
+
+        }
+
+        &:nth-child(odd) {
+          > td {
+            &:nth-child(odd) {
+              background: $stripeColor;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+.depart-return-indicator {
+  position: relative;
+  .depart {
+    margin-bottom: 0.25em;
+    text-align: center;
+    font-weight: 500;
+    span {
+      margin: 0 1em;
+    }
+    i {
+      display: inline-block;
+      color: #999;
+      &.forward {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .return {
+    font-weight: 500;
+    position: absolute;
+    left: 0.5em;
+    top: 1.875em;
+    span {
+      display: block;
+      text-align: center;
+      position: relative;
+      top: 1em;
+    }
+    i {
+      color: #999;
+      transform: rotate(-90deg);
+      display: block;
+    }
+  }
+}

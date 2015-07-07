@@ -1,0 +1,20 @@
+=render "partials/static/overlays/sharing"
+
+=render "summary/tripsummary"
+=render "summary/summarycontent"
+
+=render "partials/booking/breadcrumbs"
+
+.booking-flow.container.sm-full-width
+  .section-container
+    section#passPrimary.page-transition.active data-page="passenger"
+      =render "booking/passengerprimary"
+
+    section#passAdditional.page-transition data-page="passengerAdditional"
+      =render "booking/passengeradditional"
+
+    section#services.page-transition data-page="services"
+      =render "booking/services"
+
+    section#review.page-transition data-page="review"
+      =render "booking/review"

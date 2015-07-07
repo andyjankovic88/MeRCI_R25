@@ -1,0 +1,122 @@
+div class="search-results all-container #{direction}"
+  .container.sm-full-width
+    .messaging-container.image-bg.tokyo
+      h5
+        | Select a
+        span.direction  #{direction}ing
+        |  Flight
+      h6
+        ' #{leave_airport}
+        span.airport-code
+          ' (#{leave_airport_code})
+        ' -
+        ' #{arrive_airport}
+        span.airport-code
+          | (#{arrive_airport_code})
+
+      .date-carousel.rsDefault
+        .date-item data-date="2/20/2105"
+          div.from
+            | From
+          div.price
+            sup $
+            span 279
+          div.date
+            span.month-day
+              | 20 Feb
+            span.dayweek
+              | Tue
+
+        .date-item data-date="2/21/2105"
+          div.from
+            | From
+          div.price
+            sup $
+            span 269
+          div.date
+            span.month-day
+              | 21 Feb
+            span.dayweek
+              | Wed
+
+        .date-item data-date="2/22/2105"
+          div.from
+            | From
+          div.price
+            sup $
+            span 259
+          div.date
+            span.month-day
+              | 22 Feb
+            span.dayweek
+              | Thu
+
+        .date-item data-date="2/23/2105"
+          div.from
+            | From
+          div.price
+            sup $
+            span 239
+          div.date
+            span.month-day
+              | 23 Feb
+            span.dayweek
+              | Fri
+
+        .date-item data-date="2/24/2105"
+          div.from
+            | From
+          div.price
+            sup $
+            span 269
+          div.date
+            span.month-day
+              | 24 Feb
+            span.dayweek
+              | Sat
+
+        .date-item data-date="2/25/2105"
+          div.from
+            | From
+          div.price
+            sup $
+            span 279
+          div.date
+            span.month-day
+              | 25 Feb
+            span.dayweek
+              | Sun
+
+        .date-item data-date="2/26/2105"
+          div.from
+            | From
+          div.price
+            sup $
+            span 299
+          div.date
+            span.month-day
+              | 26 Feb
+            span.dayweek
+              | Mon
+
+      p.disclaimer
+        ' All prices are per passenger and do not include taxes or fees.
+        ' Additional
+        a href="#" baggage fees
+        |  may apply.
+
+      = render :partial => 'partials/filterbar', :locals => { :inBoundOutbound => "Depart", :cssClass => "depart" }
+
+    .flights
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "10h 50m", :stopsCount => "2 stops", :price => 249, :lowest => true}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "9h 57m", :stopsCount => "direct", :price => 329, :extraday => true }
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 01m", :stopsCount => "1 stop", :price => 349, :seatMessage => "4 seats left!"}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 45m", :stopsCount => "3 stops", :price => 447}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 47m", :stopsCount => "2 stops", :price => 545, :extraday => true}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "8h 52m", :stopsCount => "direct", :price => 549}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "4h 50m", :stopsCount => "2 stops", :price => 629, :nonstop => true}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "5h 11m", :stopsCount => "3 stops", :price => 631, :nonstop => true}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "4h 42m", :stopsCount => "1 stop", :price => 639, :nonstop => true}
+      = render :partial => 'home/search/results/flightitem_owc', :locals => {:dayweek => "Sun", :day => "1", :month => "Mar", :duration => "4h 40m", :stopsCount => "1 stop", :price => 641, :nonstop => true}
+
+      = render "partials/loadingindicator"

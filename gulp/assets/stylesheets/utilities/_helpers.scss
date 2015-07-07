@@ -1,0 +1,80 @@
+@mixin summary-container() {
+  background-image: url("/images/skyline.jpg");
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+  color: #FFF;
+  z-index: 1;
+  &.tokyo {
+    background-image: url("/images/tokyo.jpg");
+  }
+  &:after {
+    content: "";
+    opacity: 0.8;
+    background-color: #042844;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.centerItem {
+  text-align: center;
+}
+
+.row {
+  margin-bottom: 0;
+}
+.input-field {
+  margin-top: .25rem;
+}
+
+.linkBlock {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+hr {
+  clear: both;
+}
+
+.block-link {
+  display: block;
+}
+.inline-li {
+  float: left;
+  width: 100%;
+  li {
+    text-align: center;
+    float: left;
+    font-size: .75em;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+ul.inline-list {
+  li {
+    display: inline;
+    padding: .125em .5em;
+    text-transform: uppercase;
+    font-size: .875em;
+    border-right: 1px solid $light-gray;
+    &:last-of-type {
+      border-right: 0;
+    }
+    a {
+      &:hover {
+        border-bottom: 1px solid $link-blue;
+      }
+    }
+  }
+}

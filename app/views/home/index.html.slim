@@ -1,0 +1,46 @@
+-content_for :html_class, "light-bg full-height"
+-content_for :body_class, "search light-bg full-height"
+
+=render "partials/nav"
+
+nav.for-overlay.air-input-overlay
+  .container
+    .col.s12
+      a.back-button href="#"
+        i.mdi-navigation-arrow-back
+      h4.nav-heading Choose a Departing Airport
+
+=render "home/search/form"
+
+=render "partials/summary"
+
+/ -- Search Results -- /
+
+/ Itinerary Flexible / Matrix Mode
+=render "partials/matrixresultsdepart"
+
+/ Itinerary Non-Flexible
+=render "partials/itinerary/results"
+
+/OWC -OWD
+=render :partial => "home/search/results/owc", :locals => { :direction => "depart", :leave_airport => "Tokyo", :leave_airport_code => "HND", :arrive_airport => "Nice", :arrive_airport_code => "NCE" }
+=render :partial => "home/search/results/owc", :locals => { :direction => "return", :leave_airport => "Nice", :leave_airport_code => "NCE", :arrive_airport => "Tokyo", :arrive_airport_code => "HND" }
+
+/ Flex
+=render "partials/departresultsflex"
+=render "partials/returnresultsflex"
+
+/ Summary Container
+=render "partials/finalizesearch"
+
+/ Overlays
+=render "partials/static/overlays/farefamilies"
+
+/ Late Sign In Modal
+=render "partials/modals/latelogin"
+
+/ Filter Bar
+=render "partials/filterpanel"
+
+/ Departing Overlay Search
+=render "home/search/autocomplete"

@@ -1,0 +1,226 @@
+.card {
+  &.flight-summary {
+    margin-bottom: 1em;
+    display: none;
+    transition: all 500ms cubic-bezier(0.62, 0.28, 0.23, 0.99)!important;
+    opacity: 0;
+    position: relative;
+    transform: translateY(50%);
+    header {
+      transition: all 400ms cubic-bezier(0.62, 0.28, 0.23, 0.99)!important;
+      position: relative;
+      z-index: 1;
+      &.gradient:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, rgba(4,40,68,0.5) 0%,rgba(4,40,68,0.65) 100%);
+        pointer-events: none;
+        opacity: 1;
+        z-index: -1;
+      }
+      h5 {
+        font-size: 1em;
+        text-align: center;
+        margin: 0 0 0.5em;
+        line-height: normal;
+        font-weight: 400;
+        text-shadow: 0 1px 0 #000;
+        .code {
+          font-weight: 100;
+          margin-left: 0.35em;
+          opacity: 0.85;
+          font-size: 0.95em;
+        }
+        .sep {
+          margin: 0 0.5em;
+        }
+      }
+      .summary {
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1em;
+        .price-class {
+          text-align: right;
+        }
+        .date, .price {
+          font-size: 1.25em;
+          font-weight: 700;
+        }
+        .day, .class {
+          font-size: 1em;
+        }
+        .depart {
+          float: left;
+          text-align: left;
+        }
+        .return {
+          float: right;
+          text-align: right;
+        }
+      }
+    }
+    .content {
+      overflow: hidden;
+      .flight {
+        border-bottom: none;
+
+        .outbound-return-container {
+          width: 80%;
+        }
+      }
+      ul.fare-select {
+        display: none;
+      }
+      .actions {
+        display: none;
+      }
+      .details {
+        .price {
+          display: none;
+        }
+      }
+    }
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+      .details {
+        .price {
+          display: none;
+        }
+      }
+
+    }
+  }
+  // Summary Cards require some fidgeting to animate up
+  .flights {
+    position: relative;
+    overflow: visible!important;
+    .flight-item.summary-card,
+    .flight.summary-card {
+      position: absolute;
+      transition: all 1200ms ease!important;
+      transition-delay: 800ms!important;
+      left: 0;
+      right: 0;
+      margin: 0;
+      z-index: 3;
+      height: auto!important;
+      opacity: 1!important;
+
+      .flight-card-detais {
+        display: none;
+      }
+      .actions {
+        display: none;
+      }
+
+      // Once Card is in it's place, doesn't need to absolute anymore
+      &.settled {
+        position: static;
+      }
+    }
+  }
+
+  #choose-return-message.message-card {
+    display: none;
+    opacity: 0;
+    transition: all 600ms cubic-bezier(0.62, 0.28, 0.23, 0.99);
+    transform: translateY(50%);
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h3 {
+      font-weight: 300;
+      i {
+        margin-left: 0.25em;
+      }
+    }
+  }
+  .price-summary {
+    margin: 0;
+    padding: 0 1em;
+  }
+  .detail {
+    background: $xtra-light-gray;
+    .collapsible {
+      border-left: 0;
+      border-right: 0;
+      box-shadow: none;
+      margin: 0;
+      border-top: 0 none;
+      &.active {
+        i.more-icon-segment {
+          transform: rotate(180deg);
+        }
+        @media screen and (max-width: 480px) {
+          .more-action {
+            border-radius: 0!important;
+          }
+        }
+      }
+      .collapsible-header {
+        line-height: 1;
+        display: flex;
+        border-bottom: 0 none;
+        background: transparent;
+        border-radius: 0 0 2px 2px;
+        padding: 1em;
+        height: auto;
+        @media screen and (max-width: 480px) {
+          flex-direction: column;
+          height: 8rem;
+          padding: 1em 0 0;
+        }
+        .segment-info {
+          flex: 1;
+          @media screen and (max-width: 480px) {
+            padding: 0 1em;
+          }
+        }
+        .more-action {
+          @media screen and (max-width: 480px) {
+            margin-right: 0;
+            width: 100%;
+            clear: both;
+            top: .25em;
+            position: relative;
+            border-radius: 0 0 2px 2px;
+            background: $link-blue;
+            color: $white;
+            margin-left: 0;
+            text-align: center;
+            i.more-icon-segment {
+              color: $white;
+              float: none;
+            }
+          }
+        }
+        .airport-info {
+          font-size: 1em;
+          margin-bottom: .5em;
+        }
+        .time-details {
+          font-weight: 400;
+          margin-bottom: 0;
+        }
+      }
+      .collapsible-body {
+        width: 100%;
+        text-align: left;
+        border-bottom: 0 none;
+      }
+    }
+  }
+  .inline-list {
+    margin: 0;
+    a {
+      cursor: pointer;
+    }
+  }
+}

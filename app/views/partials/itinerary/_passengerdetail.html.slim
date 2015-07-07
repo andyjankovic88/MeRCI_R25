@@ -1,0 +1,17 @@
+- if !defined? passenger_name then
+  - passenger_name = "Patrick Kenney"
+
+li
+  .line-item
+    h4
+      = passenger_name
+    .more-action
+      i.mdi-navigation-expand-more.more-icon-segment
+
+  .content
+    ul.passenger-details
+      = render "partials/itinerary/passengerdetailapis"
+    .edit
+      a href="#" data-page="passenger"
+        i.mdi-editor-mode-edit
+        | Edit Info

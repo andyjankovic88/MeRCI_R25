@@ -1,0 +1,60 @@
+.sharing {
+  form {
+    .method-section {
+      display: none;
+    }
+    input, .styled-select, textarea {
+      border: 1px solid $light-gray;
+      padding: 0 .5em;
+      background: white;
+      box-sizing: border-box;
+      margin-bottom: .5em;
+    }
+    .divider {
+      margin: 1em 0;
+    }
+    .styled-select {
+      border-bottom: 0 none;
+      padding: 0;
+      color: $med-gray;
+      .browser-default {
+        padding: 0 .5em;
+        border-bottom-color: $light-gray;
+      }
+      &:after {
+        right: .25em;
+      }
+    }
+    .hint {
+      margin-top: -.125em;
+      font-size: .75em;
+      color: $med-gray;
+    }
+    label, .input-field label {
+      color: $dark-gray;
+    }
+    label, label.active {
+      position: relative;
+      top: 0;
+      left: 0;
+      font-size: .875em;
+    }
+    [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+      color: $med-gray;
+      padding-left: 1.75em;
+      margin-right: 1em;
+      margin-top: 1em;
+    }
+    .radio-container {
+      label {
+        margin-top: 0!important;
+      }
+      margin-bottom: 1em;
+    }
+    textarea {
+      padding: 1em;
+      height: 160px;
+      margin-bottom: 0;
+    }
+  }
+}

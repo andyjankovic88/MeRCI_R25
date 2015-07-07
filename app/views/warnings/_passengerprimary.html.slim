@@ -1,0 +1,15 @@
+.container
+  .header-area
+    h4 Who's Flying?
+    p.small At least one passenger on this flight must be 18 or older.
+  =render "partials/static/globalwarning"
+  form
+    =render "partials/passengerinput"
+    =render "partials/passengerapis"
+    =render "partials/passengerff"
+
+  .next-step.contain
+
+    a.btn.continue href="/pass-add" data-page="2"
+      | Continue
+      i.mdi-navigation-arrow-forward

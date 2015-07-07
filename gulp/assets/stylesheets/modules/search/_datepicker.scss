@@ -1,0 +1,19 @@
+.rd-container {
+  background: $slategray;
+  z-index: 1;
+  border-radius: 2px;
+  border-color: $border-color;
+  .rd-date {
+    display: flex;
+    color: white;
+    .rd-day-body {
+      padding: .5em;
+    }
+    .rd-day-prev-month, .rd-day-next-month {
+      color: $slategray-lighten;
+    }
+    .rd-day-selected {
+      background: $link-blue;
+    }
+  }
+}

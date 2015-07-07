@@ -1,0 +1,150 @@
+.messaging-container {
+  opacity: 0;
+  -webkit-transform: translateZ(0);
+  will-change: opacity;
+  transition: opacity .4s cubic-bezier(.62,.28,.23,.99);
+
+  &.active {
+    opacity: 1;
+  }
+  &.image-bg {
+    @include summary-container();
+  }
+}
+
+// Messaging Details
+.messaging-container {
+  text-align: center;
+  overflow: hidden;
+  padding: 1em;
+  h5 {
+    margin: 1.875em 0 .5em;
+    font-size: 1.25em;
+    font-weight: 700;
+    .direction {
+      text-transform: capitalize;
+    }
+  }
+  h6 {
+    font-weight: 500;
+    font-size: 1.25em;
+    margin-bottom: 1.875em;
+    span.airport-code {
+      font-size: 0.875em;
+    }
+  }
+  .date-display {
+    overflow: hidden;
+    margin: 2em auto 0 auto;
+    width: 60%;
+
+    &.one-way {
+      .date-container {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    > div {
+      float: left;
+      width: 33%;
+    }
+    .date-container {
+      float: left;
+      font-size: 1.125em;
+      text-align: left;
+      .month {
+        display: block;
+        font-size: 1.125em;
+        font-weight: 400;
+      }
+      .day {
+        display: block;
+        font-size: 1em;
+        font-weight: 100;
+      }
+      &.last {
+        text-align: right;
+      }
+    }
+
+    .date-separator {
+      padding-top: 0.5em;
+      text-align: center;
+    }
+  }
+  p.disclaimer {
+    font-weight: 300;
+    margin: 1.875em 1em 3em;
+  }
+  .airport-code {
+    font-weight: 300;
+    color: #EEE;
+  }
+}
+
+// Scrollable date container
+.date-carousel {
+  margin-top: -1em;
+  height: 92px;
+  padding: 0 0em;
+
+  @media (min-width: 600px) {
+    height: 100px;
+  }
+  @media (min-width: 992px) {
+    height: 104px;
+  }
+
+  .rsArrowLeft {
+    left: -0.5em!important;
+  }
+  .rsArrowRight {
+    right: -0.5em!important;
+  }
+
+  .rsSlide {
+    opacity: 0.5;
+    transform: translateY(0.45em);
+    transition: all 200ms ease-in-out;
+    &.rsActiveSlide {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .date-item {
+    text-align: center;
+    color: #FFF;
+    text-transform: uppercase;
+    line-height: normal;
+    user-select: none;
+
+    // float: left;
+    height: 6em;
+    margin: 0.5em 0;
+
+    .from {
+      text-transform: uppercase;
+      font-weight: 100;
+      font-size: 0.875em;
+      opacity: 0.75;
+    }
+
+    .price {
+      font-size: 2em;
+    }
+
+    .date {
+      .month-day {
+        display: block;
+        font-size: 1.125em;
+      }
+      .dayweek {
+        display: block;
+        font-size: 0.875em;
+        opacity: 0.75;
+      }
+    }
+  }
+}

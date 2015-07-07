@@ -1,0 +1,110 @@
+#trip-summary {
+  width: 100%;
+  border: none;
+  margin: 0;
+  max-width: 100%;
+  padding: 1em 0;
+  background: $slategray;
+  &:hover {
+    cursor: pointer;
+  }
+  a.back-button {
+    float: left;
+    color: #FFF;
+    font-size: 2.5em;
+    padding: 0 0.25em 0 0.125em;
+    position: relative;
+    top: -.15em;
+  }
+  .title {
+    margin-bottom: .5em;
+    padding-right: 1em;
+    color: $white;
+    label {
+      display: block;
+      color: $white;
+    }
+    &.collapsible-header {
+      padding: 0;
+      background-color: transparent;
+      margin: 0;
+      line-height: 1;
+      border-bottom: 0 none;
+      i {
+        display: inline;
+        float: none;
+      }
+    }
+    .label, .price-total {
+      font-size: 1.125em;
+    }
+    .price-total {
+      float: right;
+      position: relative;
+      top: -.25em;
+      font-size: 1.5em;
+      .dollars {
+        font-weight: 500;
+        font-size: 1.375em;
+      }
+    }
+  }
+  .collapsible-body {
+    border-bottom: 0 none;
+  }
+}
+
+#trip-summary-content {
+  display: none;
+  width: 100%;
+  background: $slategray;
+  padding: .5em 1em 0em;
+  color: $white;
+  .card {
+    border: 0 none;
+    color: $dark-gray;
+    padding: .5em 0 0;
+    &.flight-summary {
+      display: block;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  ul.passenger-list {
+    > li  {
+      display: none;
+    }
+  }
+
+  .sharebook {
+    margin: 1em 0;
+    p {
+      color: $light-gray;
+    }
+    a.btn {
+      margin: 0 0 1em;
+      &.alt {
+        border: 1px solid white;
+        &:hover {
+          background: transparent;
+        }
+      }
+      &:hover {
+        background: darken($light-gray, 10);
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255 ,0.25);
+    padding: 1em;
+    margin: 0 -1em 0 -1em;
+    background: rgba(255,255,255, 0.125);
+    cursor: pointer;
+    i {
+      margin-left: 0.25em;
+    }
+  }
+}

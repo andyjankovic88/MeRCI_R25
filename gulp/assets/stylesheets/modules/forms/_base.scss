@@ -1,0 +1,44 @@
+form {
+  input, .styled-select {
+    border: 1px solid $light-gray;
+    padding: 0 .5em;
+    background: white;
+    box-sizing: border-box;
+    margin-bottom: .25em;
+  }
+  .divider {
+    margin: 1em 0;
+  }
+  .styled-select {
+    border-bottom: 0 none;
+    padding: 0;
+    color: $med-gray;
+    .browser-default {
+      padding: 0 .5em;
+      border-bottom-color: $light-gray;
+    }
+    &:after {
+      right: .25em;
+    }
+  }
+  .hint {
+    margin-top: -.125em;
+    font-size: .75em;
+    color: $med-gray;
+  }
+  label, .input-field label {
+    color: $dark-gray;
+  }
+  &:not(.inline) label,
+  &:not(.inline) label.active {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: .875em;
+  }
+  [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    color: $med-gray;
+    padding-left: 1.75em;
+    margin-right: 1em;
+  }
+}

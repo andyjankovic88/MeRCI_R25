@@ -1,0 +1,50 @@
+#autocomplete-airport.overlay-modal.with-header
+  .flow-container
+    .card.search-input
+      input#air-input type="text" placeholder="Departing City"
+
+    .card.results
+      h3 Recent Searches
+
+      ul.collection.result-list
+        li.waves-effect.my-location data-port="My Location"
+          .icon-container
+            i.mdi-maps-my-location
+          label
+            | Use My Current Location
+
+        li.waves-effect data-port="Denver, CO (DEN)"
+          .airport-code
+            | DEN
+          .airport-name
+            .city
+              | Denver
+            .country
+              | United States
+
+        li.waves-effect data-port="Portlant, OR (PDX)"
+          .airport-code
+            | PDX
+          .airport-name
+            .city
+              | Portland
+            .country
+              | United States
+
+        li.waves-effect data-port="Los Angeles, CA (LAX)"
+          .airport-code
+            | LAX
+          .airport-name
+            .city
+              | California
+            .country
+              | United States
+
+        li.waves-effect data-port="Denver, CO (DEN)"
+          .airport-code
+            | DEN
+          .airport-name
+            .city
+              | Denver
+            .country
+              | United States

@@ -1,0 +1,25 @@
+.container
+
+  .header-area
+    h4 Add Your Info
+
+    .alert.alert-info
+      | At least one passenger on this flight must be 18 or older.
+
+  form.primary-passenger
+    =render "partials/passengerff"
+    hr
+    =render "partials/passengerinput"
+    =render :partial => 'partials/passengerapis', :locals => { :additionalPassenger => false }
+
+
+
+  .next-step.contain
+
+    / a.btn.prev-step.btn-secondary. href="#" data-page="search"
+    /   i.mdi-navigation-arrow-back
+    /   | Back
+
+    a.btn.continue.has-icon data-page="passengerAdditional"
+      | Continue
+      i.mdi-navigation-arrow-forward

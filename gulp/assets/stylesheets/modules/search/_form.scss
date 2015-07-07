@@ -1,0 +1,329 @@
+// Trip Type
+.trip-type {
+  max-width: 400px;
+  width: 100%;
+  padding: 1px;
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid $border-color;
+  li {
+    display: inline;
+    float: left;
+    width: 33.333%;
+    text-align: center;
+    border-right: 0 none;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-right: 1px solid white;
+    &:first-of-type {
+      border-radius: 2px 0 0 2px;
+    }
+    &:last-of-type {
+      border-radius: 0 2px 2px 0;
+      border-right-color: $slategray-lighten;
+    }
+  	[type="radio"] + label {
+      text-transform: uppercase;
+      text-align: center;
+      transition: background-color 0.5s ease-in-out;
+      padding: .5em!important;
+      margin: 0!important;
+      background-color: $slategray-lighten;
+      height: 2.25em;
+      display: block;
+      line-height: 1.25em;
+      font-size: .875em;
+      &:before, &:after {
+        display: none;
+      }
+  	}
+    [type="radio"]:not(:checked) + label {
+      color: $slategray;
+    }
+    [type="radio"]:checked + label {
+      background: $slategray;
+      color: $white;
+    }
+  }
+
+  .container {
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+}
+
+// Search Flights
+.search-flights {
+  overflow: hidden;
+  @extend .container;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2rem 1rem;
+  .pax-picker {
+    border-bottom: 1px solid $border-color;
+    color: $dark-gray;
+    flex-basis: 25%;
+    padding: .6875em .75em;
+    border-radius: 2px;
+    height: 3rem;
+  }
+  div {
+    display: flex;
+  }
+  .cities {
+    flex-basis: 55%;
+    .input-field {
+      width: 50%;
+    }
+  }
+  .dates {
+    flex-basis: 20%;
+    .input-field {
+      width: 100%;
+      input {
+        text-align: center;
+      }
+    }
+  }
+  .cities, .dates {
+    padding-right: .5em;
+    .input-field {
+      position: relative;
+      margin-top: 0;
+      &:not(.inline) label.active {
+        display: none;
+      }
+      input {
+        background: white;
+        border: 1px solid $border-color;
+        padding: 0 1em;
+        border-radius: 2px 0 0 2px;
+      }
+      #To, #Return {
+        border-left: 0;
+        border-radius: 0 2px 2px 0;
+      }
+      label {
+        position: absolute;
+        top: .75em;
+        left: .75em;
+      }
+    }
+  }
+  .cities label, .dates label, .pax-picker {
+    font-size: 1em;
+  }
+  .flex-date-container {
+    margin-right: 2rem;
+  }
+  .flex-date-container, .reward-check {
+    margin-top: 0;
+  }
+  .search-button {
+    margin-left: auto;
+    a {
+      line-height: 1.25em;
+      i {
+        margin-left: 0;
+        margin-right: 0.25em;
+        &.loading {
+          margin-right: 0;
+          margin-left: 0.5em;
+          display: none;
+          top: 0;
+        }
+      }
+      &.searching {
+        i.loading {
+          display: inline-block;
+          animation: spin 2s infinite linear;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 799px) {
+    .cities {
+      flex-basis: 76%;
+    }
+    .dates {
+      padding-right: 0;
+      flex-basis: 24%;
+    }
+    .pax-picker {
+      margin-right: 1em;
+      flex-basis: 45%;
+    }
+    .checkboxes {
+      padding-top: .625em;
+      label {
+        font-size: .875em;
+      }
+    }
+    .search-button {
+      flex-basis: 100%;
+      justify-content: center;
+      padding-top: 2em;
+      a {
+        margin-left: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .cities {
+      flex-basis: 100%;
+      padding-right: 0;
+    }
+    .dates {
+      flex-basis: 40%;
+      padding-right: .5em;
+    }
+    .pax-picker {
+      flex-basis: 60%;
+      margin-right: 0;
+    }
+    .search-button {
+      flex-basis: 33%;
+      justify-content: flex-end;
+      padding-top: 0;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .trip-type {
+      max-width: none;
+    }
+    .search-button {
+      flex-basis: 100%;
+      justify-content: center;
+      padding-top: 2em;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .cities {
+      flex-flow: column;
+      .input-field {
+        width: 100%;
+        #From {
+          border-radius: 2px 2px 0 0;
+          margin-bottom: 0;
+        }
+
+        #To {
+          border-left: 1px solid $border-color;
+          border-radius: 0 0 2px 2px;
+          border-top: 0;
+          margin-bottom: .5em;
+        }
+      }
+    }
+    .dates {
+      flex-basis: 100%;
+      padding-right: 0;
+      .input-field {
+        #Depart, #Return {
+          margin-bottom: .5em;
+        }
+      }
+    }
+    .pax-picker {
+      flex-basis: 100%;
+    }
+  }
+}
+
+// Search Panel
+.search-input {
+  &.card {
+    padding: 0.25em 1em;
+    input {
+      border: none;
+      margin: 0;
+      &:focus {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// passengers
+.passengers, .faretype {
+  clear: both;
+  overflow: hidden;
+  margin-top: 0.875em;
+  padding: 0 0.25em;
+  > label {
+    display: block;
+    position: relative;
+    left: 0.75em;
+  }
+}
+
+// Homepage placeholder
+.filler {
+  background: url(http://driveux.com/rails_apps/merci_redesign/blue_bg.jpg);
+  position: relative;
+  background-size: cover;
+  background-position: 50%;
+  -webkit-background-attachment: fixed;
+  background-attachment: fixed;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+    opacity: 1;
+  }
+  .container {
+    position: relative;
+    padding: 5.5em;
+    @media (min-width: 800px) {
+      padding: 7em;
+    }
+  }
+  h5 {
+    color: white;
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.5em;
+    font-weight: 100;
+    font-size: 2em;
+    z-index: 2;
+    @media (min-width: 800px) {
+      font-size: 3em;
+    }
+  }
+}
+
+// Round Trip Toggle
+.dates {
+  clear: both;
+  .depart-container,
+  .return-container {
+    transition: all 300ms ease-in-out;
+    opacity: 1;
+  }
+  &.one-way {
+    .depart-container {
+      width: 100%;
+    }
+    .return-container {
+      width: 0;
+      height: 0;
+      padding: 0;
+      opacity: 0;
+    }
+  }
+}
+
+body.search {
+  .card {
+    &.flight-summary {
+      display: none;
+    }
+  }
+}

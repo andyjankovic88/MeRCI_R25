@@ -1,0 +1,38 @@
+.matrix-results-alt.depart
+  .depart-return-indicator
+    .depart
+      i.mdi-hardware-keyboard-backspace.back
+      span Depart
+      i.mdi-hardware-keyboard-backspace.forward
+
+  table.matrix.responsive-table
+
+    tbody
+
+      tr
+        = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "27",  :month => "Oct" }
+        = render :partial => 'partials/matrix/item', :locals => {:price => "624", :lowest => true }
+
+      tr
+        = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "28",  :month => "Oct" }
+        = render :partial => 'partials/matrix/item', :locals => {:price => "675" }
+
+      tr
+        = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "29",  :month => "Oct" }
+        = render :partial => 'partials/matrix/item', :locals => {:price => "734" }
+
+      tr
+        = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "30",  :month => "Oct", :active => true }
+        = render :partial => 'partials/matrix/item', :locals => {:price => "809", :selected => true }
+
+      tr
+        = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "31",  :month => "Oct" }
+        = render :partial => 'partials/matrix/item', :locals => {:price => "624", :lowest => true }
+
+      tr
+        = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "1",  :month => "Nov" }
+        = render :partial => 'partials/matrix/item', :locals => {:price => "709" }
+
+      tr
+        = render :partial => 'partials/matrix/heading', :locals => {:dayweek => "Thu", :day => "2",  :month => "Nov" }
+        = render :partial => 'partials/matrix/item', :locals => {:price => "709" }

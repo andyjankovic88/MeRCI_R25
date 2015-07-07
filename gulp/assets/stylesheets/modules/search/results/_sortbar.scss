@@ -1,0 +1,67 @@
+.sort-bar {
+  > ul {
+    margin: 0;
+    overflow: hidden;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    background: $dark-gray;
+    > li {
+      display: block;
+      width: 25%;
+      float: left;
+      border-right: 1px solid #CCC;
+      box-sizing: border-box;
+      &:last-child {
+        border-right: none;
+      }
+      &.sort-down {
+        > a > i {
+          &.up {
+            opacity: 0;
+          }
+          &.down {
+            opacity: 1;
+            top: 0.125em;
+          }
+        }
+      }
+      &.sort-up {
+        > a > i {
+          &.up {
+            opacity: 1;
+            top: 0.125em;
+          }
+          &.down {
+            opacity: 0;
+            top: 0.125em;
+          }
+        }
+      }
+      &.duration {
+        a i {
+          right: 0.125em;
+        }
+      }
+      > a {
+        display: block;
+        padding: 0.5em 1em 0.5em 0;
+        text-align: center;
+        color: #FFF;
+        font-weight: 300;
+        position: relative;
+        i {
+          position: absolute;
+          right: 0.25em;
+          opacity: 0.5;
+          font-size: 1.5em;
+          &.down {
+            top: 0.2875em;
+          }
+          &.up {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

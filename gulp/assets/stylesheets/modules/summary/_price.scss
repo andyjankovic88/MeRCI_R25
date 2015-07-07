@@ -1,0 +1,126 @@
+// Price Details Container
+.price-summary {
+  margin: 1em;
+  h3 {
+    font-size: 1.675em;
+    border-bottom: 1px solid #999;
+    margin: 0;
+    span.label {
+      float: left;
+      font-weight: 300;
+      font-size: 0.875em;
+      text-align: left;
+    }
+    span.price-total {
+      float: right;
+    }
+
+    .currency-converter {
+      display: inline-block;
+      font-size: 0.75em;
+      margin-left: 0.35em;
+      position: relative;
+      bottom: 0.125em;
+      font-weight: 300;
+      color: #555;
+      line-height: normal;
+      select {
+        border-bottom: none;
+        display: inline-block;
+        width: auto;
+        padding-right: 0;
+        background: transparent;
+      }
+      &:after {
+        right: -1em;
+        top: 0.675em;
+      }
+    }
+  }
+
+  .price-disclaimer {
+    text-align: left;
+    color: $dark-gray;
+    font-weight: 400;
+    margin: 0.5em 0 1em;
+    font-style: italic;
+  }
+
+  footer.more-info {
+    background: transparent;
+    color: #2196F3;
+    font-size: 1em;
+  }
+}
+
+ul.price-breakdoown {
+  > li {
+    .line-item {
+      overflow: hidden;
+      > span {
+        display: inline-block;
+        padding: 0.5em 0;
+        border-bottom: 1px solid #EEE;
+        width: 50%;
+        text-align: left;
+        i {
+          margin-left: 0.125em;
+          position: relative;
+          top: 0.125em;
+        }
+        &.total {
+          text-align: right;
+        }
+      }
+      &.active i.mdi-navigation-arrow-drop-down {
+        display: inline-block;
+        transform: rotate(180deg);
+      }
+    }
+    .breakdown.expandable {
+      display: block;
+    }
+  }
+}
+
+.breakdown {
+  font-size: 0.875em;
+  display: none;
+  dt {
+    width: 80%;
+    margin-bottom: 0.875em;
+    text-align: left;
+  }
+  dd {
+    width: 20%;
+    text-align: right;
+    margin-left: 0;
+    margin-bottom: 0.875em;
+  }
+}
+
+// Next Step Button
+.btn.finalize-step {
+  line-height: normal;
+  padding: 1em 1.75em;
+  margin: 0 auto;
+  margin-top: 1em;
+  i {
+    font-size: 1.25em;
+    position: relative;
+    top: 0.125em;
+    margin-left: 0.5em;
+  }
+}
+
+#LateLogin {
+  margin: 2em 0 1em;
+  display: block;
+}
+
+.finalize-step {
+  display: none;
+  padding-bottom: 1em!important;
+  text-align: center;
+  background: #FFF;
+}

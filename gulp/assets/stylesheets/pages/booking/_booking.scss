@@ -1,0 +1,98 @@
+.booking-flow {
+  .container {
+    width: 100%;
+    h3, .flight-summary, .message-card, .finalize-step, #choose-return-message.message-card {
+      display: block;
+      opacity: 1;
+    }
+    .flight-summary.active, .price-summary {
+      box-shadow: none;
+      margin: 1em 0;
+    }
+  }
+  .next-step {
+    margin-top: 2em;
+    .back {
+      float: left;
+      i {
+        margin-left: 0;
+        margin-right: 0.25em;
+      }
+    }
+    .continue {
+      float: right;
+    }
+  }
+  form {
+    input, .styled-select {
+      border: 1px solid $light-gray;
+      padding: 0 .5em;
+      background: white;
+      box-sizing: border-box;
+      margin-bottom: .5em;
+    }
+    .divider {
+      margin: 1em 0;
+    }
+    .styled-select {
+      border-bottom: 0 none;
+      padding: 0;
+      color: $med-gray;
+      .browser-default {
+        padding: 0 .5em;
+        border-bottom-color: $light-gray;
+      }
+      &:after {
+        right: .25em;
+      }
+    }
+    .hint {
+      margin-top: -.125em;
+      font-size: .75em;
+      color: $med-gray;
+    }
+    label, .input-field label {
+      color: $dark-gray;
+    }
+    label, label.active {
+      position: relative;
+      top: 0;
+      left: 0;
+      font-size: .875em;
+      &.active {
+        color: #2196F3;
+      }
+    }
+    [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+      color: $med-gray;
+      padding-left: 1.75em;
+      margin-right: 1em;
+      margin-top: 1em;
+    }
+    .radio-container {
+      label {
+        margin-top: 0!important;
+      }
+      margin-bottom: 1em;
+    }
+  }
+
+  .header-area {
+    text-align: center;
+  }
+  .constrained-input {
+    max-width: 18em;
+  }
+  .clear-space {
+    margin-top: 0.5em;
+  }
+  .payment-section {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid $light-gray;
+    display: none;
+  }
+  .promotion-container {
+    max-width: 24.25em;
+  }
+}

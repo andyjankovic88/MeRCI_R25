@@ -1,0 +1,17 @@
+footer.page-footer.center
+  .container
+    ul.inline-list
+      li
+        a href="#!" Terms & Conditions
+      li
+        a href="#!" Fare Conditions
+      li
+        a href="#!" Booking Details
+      li
+        a href="#!" Baggage Policy
+      li
+        = link_to "Logout", destroy_user_session_path, :method => 'delete'
+
+  .footer-copyright
+    .container
+      | © 2015 MeRCI Airlines

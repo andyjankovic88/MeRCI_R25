@@ -1,0 +1,60 @@
+- lowestClass = ""
+- if defined? lowest & lowest == true then
+    - lowestClass = " lowest"
+
+- durationFormatted = "8h 50m"
+- if defined? duration then
+    - durationFormatted = duration
+
+- extradayclass = ""
+- if defined? extraday then
+    - extradayclass = "extra"
+
+- if !defined? stopsCount then
+  - stopsCount = "2 Stops"
+
+- if !defined? flightTimes then
+  - flightTimes = "9:00 - 14:00"
+
+- directClass = ""
+- if defined? nonstop then
+    - stopsCount = "Direct"
+    - directClass = "direct"
+
+- if !defined? departReturnLabel then
+  - departReturnLabel = "Departing Trip"
+
+- isDeparting = departReturnLabel == "Departing Trip"
+- airInfo = "Nice Intl (NCE) - Haneda Intl (HND)"
+- if isDeparting then
+  - airInfo = "Haneda Intl (HND) - Nice Intl (NCE)"
+
+.flight.single
+  .details
+    .info
+      strong
+        = airInfo
+      ul.time-details
+        li class="time #{extradayclass}"
+          = flightTimes
+        li.duration
+          = duration
+        li.stops
+          = stopsCount
+      label.seatleft
+        - if defined? seatMessage then
+            = seatMessage
+
+    div class="price #{lowestClass}"
+      .price-container
+        label
+          | From
+        sup $
+        span
+          = price
+
+    i.mdi-navigation-expand-more.expand
+
+  .flight-details.expandable
+    = render :partial => "partials/fare_select"
+    = render :partial => 'partials/segments'

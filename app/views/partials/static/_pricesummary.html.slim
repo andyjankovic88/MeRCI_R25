@@ -1,0 +1,115 @@
+.price-summary.contain
+  ul.price-breakdoown
+    li
+      .line-item
+        span
+          | Passenger Fees
+          i.mdi-navigation-arrow-drop-down
+        span.total
+          span
+            | 75.00
+      .breakdown
+        dl
+          dt
+            | (XF) Passenger facility charge
+          dd 65.00
+
+          dt
+            | (OO) Passenger security service charge
+          dd 5.00
+
+          dt
+            | (AY) Passenger civil aviation security service fee (Domestic / International)
+          dd 5.00
+
+          dt.sum
+            | Total Taxes for 1 Adult
+          dd.sum
+            | 75.00
+
+    li
+      .line-item
+        span
+          | Taxes
+          i.mdi-navigation-arrow-drop-down
+        span.total
+          span
+            | 10.00
+      .breakdown
+        dl
+          dt
+            | (XA) APHIS user fee – passenger
+          dd 5.00
+
+          dt
+            | (US) Transportation tax(Domestic / International)
+          dd 5.00
+
+          dt.sum
+            | Total Taxes for 1 Adult
+          dd.sum
+            | 10.00
+
+
+    li
+
+      .line-item
+        span
+          | Additional Fees
+          i.mdi-navigation-arrow-drop-down
+        span.total
+          span
+            | 15.00
+
+      .breakdown
+        dl
+          dt
+            | (AY) Passenger civil aviation security service fee (Domestic / International)
+          dd 5.00
+
+          dt
+            | (XA) APHIS user fee – passenger
+          dd 5.00
+
+          dt
+            | (YC) Custom user fee
+          dd 5.00
+
+          dt.sum
+            | Total fees for 1 Adult
+          dd.sum
+            | 15.00
+
+    li
+      .line-item
+        span
+          | Services
+          i.mdi-navigation-arrow-drop-down
+        span.total
+          span
+            | 0.00
+
+      .breakdown
+        dl
+          dt.sum
+            | Total Sevices for 1 Adult
+          dd.sum
+            | 0.00
+  h3.contain
+    span.label
+      | Total Price
+      .currency-converter.styled-select
+        | (
+        = render "/partials/utilities/currencyconverter"
+        | )
+
+    span.price-total
+      sup $
+      span.dollars 624.00
+
+
+  p.price-disclaimer
+      ' Price listed is for all passengers and subject to
+      a href="#"
+        | fare conditions
+      | .

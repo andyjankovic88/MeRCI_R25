@@ -1,0 +1,14 @@
+- classSelected = ""
+- if defined? selected & selected == true then
+    - classSelected = "selected"
+
+- classLowest = ""
+- if defined? lowest & lowest == true then
+    - classLowest = "lowest"
+
+
+td class="#{classSelected} #{classLowest}"
+  span.price
+    sup $
+    span
+      = price

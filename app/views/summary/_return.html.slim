@@ -1,0 +1,55 @@
+.flight-item.active
+  .details.contain
+    .time
+      time 10:42am
+      span.sep |
+      time 4:45pm
+    .duration
+      span 6h 03m
+    .stops
+      span 1 stop
+    .price
+      .price-container
+        sup $
+        span 249
+  .flight-details
+    .route-info
+      .leg.depart
+        .air-info.contain
+          .flight-no
+            | # DN331
+          .plane-type
+            i.mdi-device-airplanemode-on
+            | Boeing 747
+        span.airport
+          | Denver International
+          abbr (DEN)
+        time 9:01am
+      .leg.layover
+        .air-info.contain
+          .flight-no
+            | # FI670
+          .plane-type
+            i.mdi-device-airplanemode-on
+            | Boeing 747
+        span.airport
+          | Portland International
+          abbr (PWM)
+        time 1:15pm - 3:00pm
+        .between-flights
+          strong Layover duration : 1hr 45min
+      .leg.arrive
+        .air-info.contain
+          .flight-no
+            | # SN640
+          .plane-type
+            i.mdi-device-airplanemode-on
+            | Boeing 747
+        span.airport
+          | Keflavik International
+          abbr (KEF)
+        time 1:01am
+    .total-duration
+      label Total travel time : 12h 46min
+    .actions
+      a.btn.left.btn-secondary.cancel href="#" Cancel

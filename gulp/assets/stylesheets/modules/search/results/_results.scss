@@ -1,0 +1,69 @@
+ul.result-list {
+  border-bottom: none;
+  border-radius: 0;
+  > li {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.5em;
+    overflow: hidden;
+    width: 100%;
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .airport-code {
+      float: left;
+      width: 3.25em;
+      font-size: 1.125em;
+      color: #AAA;
+      font-weight: 100;
+      position: relative;
+      top: 0.5em;
+      margin-left: 0.5em;
+    }
+
+    .airport-name {
+      position: relative;
+      float: left;
+      .country {
+        color: #AAA;
+        font-size: 0.875em;
+      }
+    }
+
+    &.my-location {
+      .icon-container {
+        float: left;
+        width: 3.25em;
+        font-size: 1.25em;
+        text-align: center;
+        padding-right: 0.5em;
+      }
+      label {
+        float: left;
+        font-size: 1em;
+        margin-top: 0.275em;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+// Hand flight items not being around anymore once a card is selected
+.search-results {
+  margin-bottom: 1em;
+  &.chosen {
+    position: relative;
+
+    // Fade out items on selection
+    .flight-item:not(.summary-card),
+    .flight:not(.summary-card),
+    .sort-bar,
+    .filter-container,
+    .summary-with-filter,
+    .itinerary-filter-sort,
+    .flight-details {
+      opacity: 0!important;
+      transition-delay: 0 !important;
+    }
+  }
+}

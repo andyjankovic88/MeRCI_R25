@@ -1,0 +1,50 @@
+input.cc-number {
+
+  padding-left: 59px;
+  background-image: url("/images/sprite.png");
+  background-repeat: no-repeat;
+  background-size: 69px;
+  background-position: 7px -50px;
+
+  @media (min-width: 359px) {
+    background-size: 70px;
+  }
+  @media (min-width: 600px) {
+    background-size: 71px;
+  }
+
+
+  &.visa {
+    background-position: 7px -91px;
+  }
+  &.mastercard {
+    background-position: 7px -172px;
+  }
+  &.visaelectron {
+    background-position: 7px -132px;
+  }
+  &.maestro {
+    background-position: 7px -212px;
+  }
+  &.discover {
+    background-position: 7px -253px;
+  }
+  &.amex {
+    background-position: 7px -290px;
+  }
+  &.dinersclub {
+
+  }
+}
+
+.exp_date {
+  .slash {
+    margin-top: .8rem
+  }
+  .input-field {
+    margin-top: 0;
+  }
+  .slash {
+    text-align: center;
+  }
+}

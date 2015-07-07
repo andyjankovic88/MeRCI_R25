@@ -1,0 +1,20 @@
+body.search {
+  // Summary of chosen flights
+  .summary-container {
+    background: $xtra-light-gray;
+    overflow: hidden;
+
+    .container > h3 {
+      font-weight: 300;
+      font-size: 1.875em;
+      display: none;
+      margin: 0.5em;
+    }
+    &.active {
+      height: 100%;
+      .finalize-step, .container > h3 {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+- if defined? seatMessage then
+    = seatMessage
+
+ul.fare-select
+  li.economy data-family="economy"
+
+    label
+      | Economy
+      i.mdi-action-info-outline
+    label.seatleft
+      | 2 seats left!
+    a.btn.price-select href="#"
+      sup $
+      span
+        | 249
+
+  li.eco-plus data-family="economyplus"
+    label
+      | Economy Plus
+      i.mdi-action-info-outline
+    label.seatleft
+      | 2 seats left!
+    a.btn.price-select href="#"
+      sup $
+      span
+        | 269
+
+  li.business data-family="business"
+    label
+      | Business
+      i.mdi-action-info-outline
+
+    a.btn.price-select href="#"
+      sup $
+      span
+        | 289

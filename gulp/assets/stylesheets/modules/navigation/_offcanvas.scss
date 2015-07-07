@@ -1,0 +1,37 @@
+// Navigation Close
+.side-nav {
+  li.nav {
+    background-color: $midnight-blue;
+    overflow: hidden;
+    padding: 0;
+    &:hover {
+      background-color: $midnight-blue;
+    }
+    a {
+      display: inline-block;
+      float: left;
+      height: 64px;
+      i {
+        color: #FFF;
+        font-size: 1.75em;
+      }
+    }
+  }
+  li:not(.nav) {
+    border-bottom: 1px solid $xtra-light-gray;
+    a {
+      padding-left: 0.25em;
+      color: $link-blue;
+      display: block;
+      i {
+        float: left;
+        color: $slategray;
+        margin-right: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+    &:hover {
+      background: $xtra-light-gray;
+    }
+  }
+}

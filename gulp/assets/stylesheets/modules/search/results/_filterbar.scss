@@ -1,0 +1,277 @@
+// Summarizes flight, with filter button on right
+.summary-with-filter, .summary-no-filter {
+  overflow: hidden;
+  background: #fefefe;
+  border-top: 1px solid #EEE;
+  .trip-statement {
+    font-size: 1.25em;
+    padding: 0.25em 1rem;
+
+    span {
+      text-transform: uppercase;
+    }
+    label {
+      margin-left: 0.5em;
+      font-size: 0.875em;
+      font-weight: 300;
+      i {
+        margin: 0 0.25em;
+        position: relative;
+        top: 0.0875em;
+      }
+    }
+  }
+
+  &.itinerary {
+    .date-summary {
+
+      &.departure {
+        width: 100%;
+      }
+      &.arrival {
+        display: inline-block;
+        clear: both;
+      }
+    }
+
+  }
+
+  .trip-info{
+    width: 100%;
+  }
+
+  .date-summary {
+    padding: 1em 1rem 0;
+    font-size: 1em;
+    position: relative;
+    .day-long {
+      text-transform: uppercase;
+    }
+    .day {
+      margin: 0 0.5em;
+    }
+    .month-short {
+
+    }
+  }
+
+  .filter-container {
+    padding-right: 1em;
+    margin-top: 1.5em;
+    position: absolute;
+    right: 0;
+    top: 1em;
+    margin-top: 0;
+
+    a {
+      padding: 0 1.5em;
+      margin-bottom: 0;
+      position: relative;
+      height: auto;
+      font-size: 0.875em;
+      line-height: 1em;
+      padding: 0.875em 1.5em 1em;
+      i {
+        margin-left: 0.35em;
+        position: relative;
+        top: 0.125em;
+      }
+    }
+  }
+  // Flex filter bar does not contain date
+  &.flex {
+    padding-top: 1em;
+    border-bottom: 1px solid #EEE;
+    position: relative;
+    height: 6em;
+    .trip-statement {
+      float: left;
+      font-size: 1.25em;
+      top: 0.25em;
+      padding: 0 0 0 1rem;
+      position: relative;
+      > span {
+        display: block;
+      }
+      .airports {
+        font-weight: 400;
+        margin-left: 0;
+        color: $dark-gray;
+        .airport-code {
+          font-weight: 300;
+          font-size: 0.875em;
+        }
+      }
+    }
+    .filter-container {
+      margin-top: 0;
+    }
+  }
+}
+
+// Filter with No Summary Overrides
+.summary-no-filter {
+  .trip-statement {
+    float: none;
+    padding: 1rem;
+  }
+}
+
+// Filter Container
+.filter-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 101;
+  pointer-events: none;
+  .container {
+    padding: 0 1em;
+  }
+  &.active {
+    pointer-events: all;
+    background: linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+    .content {
+      transform: translateY(0);
+    }
+  }
+
+  .range-field {
+    .thumb {
+      display: none;
+    }
+  }
+  .content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0,0,0, 0.5);
+    background: #FFF;
+    padding-bottom: 6.5em;
+    transition: transform .3s cubic-bezier(.62,.28,.23,.99);
+    transform: translateY(100%);
+  }
+  .header-container {
+    border-bottom: 1px solid #CCC;
+    background: #f7f7f7;
+    padding: 0.25em 0;
+    margin-bottom: 1em;
+  }
+  h3 {
+    font-size: 1.5em;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    i {
+      // Little extra padding for touch target
+      padding: 0 0em 0 0.5em;
+      margin: 0;
+    }
+  }
+  .label-container {
+    font-size: 1.125em;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+  .range-field {
+    margin-top: 0;
+  }
+}
+
+// Drawer Footer for action buttons
+.drawer-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #EEE;
+  padding: 1.5em;
+  > a.btn {
+    margin-bottom: 0;
+  }
+}
+
+.update-field {
+  font-size: 0.875em;
+  color: #999;
+  margin-left: 0.25em;
+}
+
+// Time Splitting indicators
+.separator-indicator {
+  position: absolute;
+  left: 50%;
+  top: 0.125em;
+  border-right: 1px solid #AAA;
+  height: 0.75em;
+}
+
+// Slider Annotations
+.annotations {
+  margin-top: -0.5em;
+  > span {
+    width: 17%;
+    display: inline-block;
+    text-align: left;
+    color: #999;
+    font-size: 0.875em;
+    &:first-child {
+      width: 33.33%;
+      padding-left: 1.5%;
+    }
+    &:nth-child(2) {
+      width: 31.333%;
+
+    }
+    &:last-child {
+      text-align: right;
+      width: 17%;
+    }
+  }
+}
+
+.itinerary-filter-sort {
+  padding: 1em .5em 0.5em;
+  overflow: auto;
+  background: rgba(#222,.8);
+  .sort-bar {
+    float: left;
+    text-align: left;
+    label {
+      position: absolute;
+      top: -0.5em;
+      z-index: 1;
+    }
+
+    select {
+      background: transparent;
+      font-weight: 500;
+      border-bottom: none;
+      box-shadow: none;
+      color: #FFF;
+      &:active, &:focus {
+        outline: none;
+      }
+    }
+    .styled-select:after {
+      color: #FFF;
+      top: 0.5em;
+    }
+  }
+
+  .filter-container {
+    float: right;
+    a {
+      margin: 0;
+      font-size: 0.875em;
+      padding: 0.75em 1.25em 0.75em;
+      height: auto;
+      line-height: normal;
+      i {
+        font-size: 1em;
+        margin-left: 0.5em;
+      }
+    }
+  }
+}

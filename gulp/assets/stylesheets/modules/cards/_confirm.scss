@@ -1,0 +1,147 @@
+#confirmation {
+  .card {
+    margin-bottom: 2em;
+    .price-summary {
+      padding: 0;
+    }
+    &.flight-summary {
+      display: block;
+      opacity: 1;
+      transform: none;
+      border: 1px solid $border-color;
+      margin: 0 0 1em;
+    }
+    footer {
+      &.more-info {
+        opacity: 1;
+        height: 2.75em;
+        padding: .5em 1em 0;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+        @media only screen and (max-width: 480px) {
+          width: 100%;
+        }
+      }
+    }
+    &.trip-summary {
+      clear:both;
+      text-align: center;
+      .summary-header {
+        padding: 2.5em 1em;
+        @include summary-container();
+      }
+      .summary-body {
+        padding: 1em;
+        .action-buttons {
+          a {
+            margin-right: .5em;
+            display: inline-block;
+            &.pb-btn {
+              position: relative;
+              top: 17px;
+              margin-bottom: 1em;
+              img {
+                height: 47px;
+              }
+            }
+          }
+        }
+        .reservation-number {
+          margin-bottom: 1em;
+          text-transform: uppercase;
+          .data {
+            font-size: 1.75em;
+          }
+        }
+        .price {
+          font-size: 1.25em;
+          margin-bottom: 2em;
+          strong.price {
+            font-weight: 700;
+          }
+        }
+      }
+      .expandable {
+        padding: 1em;
+        .card {
+          box-shadow: none;
+        }
+      }
+      .sep {
+        margin: 0 .5em;
+      }
+      .passenger {
+        text-align: left;
+        box-shadow: none;
+        font-weight: 500;
+        margin-top: 1em;
+        .collapsible-body {
+          padding: 1em;
+        }
+        .sep {
+          border-right: 1px solid #ededed;
+        }
+        @media only screen and (max-width: 480px) {
+          text-align: center;
+        }
+        .etick {
+          label {
+            text-transform: uppercase;
+          }
+        }
+        .collapsible-header {
+          @media only screen and (max-width: 480px) {
+            height: 4.5rem;
+            line-height: 1;
+            padding: 1em .5em;
+            text-align: center;
+            i {
+              position: relative;
+              top: -2.5em;
+            }
+            .pax {
+              margin-bottom: .5em;
+              display: inline-block;
+            }
+            .sep {
+              display: none;
+            }
+            .etick {
+              float: none;
+              font-size: .85em;
+              display: block;
+            }
+          }
+        }
+      }
+      .special-buttons {
+        text-align: left;
+        a {
+          width: 48.5%;
+          margin-bottom: 0;
+          color: $dark-gray;
+          background-color: #e0e0e0;
+          margin-right: 0;
+          &.first {
+            margin-right: 3%;
+          }
+        }
+      }
+      .collapsible-header {
+        i {
+          margin: 0;
+          width: 1em;
+          font-size: 1em;
+          margin-left: .5em;
+          position: relative;
+          color: $link-blue;
+          font-weight: 700;
+        }
+      }
+    }
+    .expandable {
+      width: 100%;
+    }
+  }
+}

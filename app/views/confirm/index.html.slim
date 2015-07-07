@@ -1,0 +1,119 @@
+-content_for :body_class, "confirmation"
+
+=render "partials/nav"
+
+section#confirmation.page-transition data-page="confirmation"
+  .container
+    .header-area
+      h5 Reservation Confirmed
+      h4 Enjoy your trip to Nice!
+      p You may check-in and print boarding passes 24 hours prior to departure.
+    .card.trip-summary
+      .summary-header
+        h5
+          span.location Tokyo
+          span.code
+            |  (HND)
+          span.sep
+            | -
+          span.location Nice
+          span.code
+            |  (NCE)
+        .date-summary
+          span.depart
+            | Monday, 26 Feb
+          '  to
+          span.return
+            | Tuesday, 27 Feb
+      .summary-body
+        .reservation-number
+          label Reservation Number
+          span.data
+            br/
+            strong DEF456
+        .price
+          .price
+            sup $
+            strong.price
+              | 467
+            |  has been charged to your card ending in 4585.
+        .action-buttons
+          = render "partials/socialbuttons"
+          a.pb-btn href="#"
+            img src="images/passbook.svg"
+        ul.collapsible.passenger data-collapsible="accordion"
+          li
+            .collapsible-header
+              span.pax Gregory Cevear
+              span.sep
+              span.etick
+                label
+                  ' e-Ticket
+                strong 160-123456789
+              i.mdi-navigation-expand-more.right.more-icon
+            .collapsible-body
+              ul.passenger-details
+                li
+                  label Confirmation
+                  ' SN/0123456789
+                li
+                  label Ticket Status
+                  ' Processed 01 February 2014
+                li
+                  label Issuing Airline
+                  ' MyAirline.com
+                li
+                  label Tour Code
+                  ' SN/345678945
+                li
+                  label VAT
+                  ' 456789654
+                = render "partials/itinerary/passengerdetailapis"
+
+          li
+            .collapsible-header
+              span.pax Matt Ludwig
+              span.sep
+              span.etick
+                label
+                  ' e-Ticket
+                strong 160-123456789
+              i.mdi-navigation-expand-more.right.more-icon
+            .collapsible-body
+              ul.passenger-details
+                li
+                  label Confirmation
+                  ' SN/0123456789
+                li
+                  label Ticket Status
+                  ' Processed 01 February 2014
+                li
+                  label Issuing Airline
+                  ' MyAirline.com
+                li
+                  label Tour Code
+                  ' SN/345678945
+                li
+                  label VAT
+                  ' 456789654
+                = render "partials/itinerary/passengerdetailapis"
+
+
+      .expandable
+        =render "partials/itinerary/flightcards"
+        =render "partials/static/pricesummary"
+      footer.more-info
+        span.more View Flight Details
+        span.less Close
+        i.mdi-navigation-expand-more.more-icon
+
+    .section
+      =render "partials/static/baggage"
+
+    .section
+      =render "partials/static/dangerousgoods"
+
+    .section
+      =render "partials/static/mytrip"
+
+=render "partials/modals/sharing"

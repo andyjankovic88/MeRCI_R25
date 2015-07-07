@@ -1,0 +1,426 @@
+// Give us room for scrolling
+.search-results {
+  min-height: 100%;
+  .flight {
+    background: $white;
+  }
+}
+
+// Flight listing items
+.flights {
+  transition: all .4s cubic-bezier(.62,.28,.23,.99);
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  overflow: hidden;
+  opacity: 0;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  .flight {
+    transition: opacity, transform 800ms ease-in-out;
+    transform-origin: 0 0;
+    transition-delay: 400ms;
+    .details {
+      transition: background-color 800ms ease-in-out;
+    }
+  }
+  &.loading {
+    position: relative;
+    .flight {
+      opacity: 0.5!important;
+      transform: rotateX(90deg);
+      transition-delay: 0ms;
+    }
+    .loading-indicator {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 600ms;
+      i {
+        display: inline-block;
+        font-size: 3em;
+        position: absolute;
+        left: 0;
+        top: 1em;
+        animation-duration: 5s;
+        animation-name: flyInRight;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        color: #2196F3;
+
+      }
+      span {
+        opacity: 1;
+      }
+    }
+  }
+  &.open {
+    opacity: 1;
+  }
+  &.fully {
+    position: static;
+    .flight-item {
+      height: 4.75em;
+      transform: translateY(0);
+      transition-delay: 500ms;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      will-change: opacity, transformm height;
+      opacity: 1;
+      background: #FFF;
+      &:last-child {
+        border-bottom: none;
+      }
+      &.active {
+        height: 50em;
+        transition-delay: 0;
+        background: #fefefe;
+        transition: all 400ms ease-out;
+      }
+    }
+
+    footer {
+      opacity: 1;
+      height: 3.25em;
+      padding: 1em;
+    }
+  }
+  .flight-item {
+    height: 0;
+    border-bottom: none;
+    will-change: transform, opacity, height;
+    -webkit-transform: translateZ(0);
+    transform: translateY(20%);
+    transition: all .4s cubic-bezier(.62,.28,.23,.99);
+    opacity: 0;
+    padding: 0;
+  }
+
+  footer {
+    height: 0;
+    text-align: center;
+    opacity: 0;
+    color: #999;
+    font-weight: 300;
+    overflow: hidden;
+    font-size: 0.875em;
+    -webkit-transform: translateZ(0);
+    will-change: opacity, height, transform;
+    transition: all .4s cubic-bezier(.62,.28,.23,.99);
+    transition-delay: 200ms;
+
+  }
+}
+
+// Singular flight item
+.flight-item {
+  position: relative;
+  overflow: hidden;
+  &:nth-child(odd) {
+    .details {
+      background: #fafafa;
+    }
+  }
+  &:first-child {
+    .details {
+      border-top: none;
+    }
+  }
+  .details {
+    padding: 0.5em 0;
+    border-top: 1px solid #CCC;
+    .duration, .stops {
+      padding: 1em 0 0.875em;
+      font-size: 1.125em;
+      font-weight: 300;
+      position: relative;
+      &.extra {
+        padding-top: 0.5em;
+      }
+      .extraday {
+        font-size: 0.675em;
+        color: $orange;
+        display: block;
+        font-weight: 400;
+      }
+      &.direct {
+        color: blue;
+        font-weight: 400;
+      }
+    }
+    .price {
+      font-weight: 400;
+      font-size: 1.45em;
+      &.lowest {
+        color: #093;
+        .price-container {
+          position: relative;
+          top: -0.35em;
+          &:after {
+            content: "lowest";
+            position: absolute;
+            border: 1px solid #093;
+            color: #093;
+            background: white;
+            display: inline-block;
+            font-size: 0.45em;
+            bottom: -1.25em;
+            left: 0.5em;
+            right: 0;
+            margin: 0 auto;
+            padding: 0.0125em 0em;
+            width: 4.5em;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .time-line {
+      width: 100%;
+      padding: 0;
+      margin-top: 0.5em;
+      clear: both;
+      .time-line-container {
+        overflow: hidden;
+        text-align: left;
+        padding: 0 1.5em;
+        position: relative;
+        &:after {
+          content: " ";
+          height: 0;
+          position: absolute;
+          left: 1.5em;
+          right: 1.5em;
+          top: 0.5em;
+          border-bottom: 2px solid $border-color;
+          z-index: 1;
+
+        }
+        > div {
+          display: inline-block;
+        }
+      }
+
+      .marker {
+        border-radius: 200px;
+        height: 1em;
+        display:inline-block;
+        border: 2px solid $border-color;
+        width: 100%;
+        background: #FFF;
+        z-index: 2;
+        position: relative;
+      }
+      label.airport {
+        font-size: 0.875em;
+        display: block;
+        text-align: center;
+      }
+
+      .depart {
+        width: 1em;
+        float: left;
+      }
+
+      .return {
+        width: 1em;
+        float: right;
+        label.airport {
+          position: relative;
+          right: 1em;
+        }
+      }
+
+    }
+
+  }
+}
+
+// Normal Flight listing
+.all-container {
+  display: none;
+
+  .summary-with-filter,
+  .itinerary-filter-sort,
+  .messaging-container {
+    position: relative;
+    opacity: 0;
+    -webkit-transform: translateZ(0);
+    will-change: opacity, height, transform;
+    transition: all .4s cubic-bezier(.62,.28,.23,.99);
+  }
+
+  .sort-bar {
+    height: 2.6em;
+    position: relative;
+  }
+
+  &.active {
+    display: block;
+
+    .summary-with-filter {
+      opacity: 1;
+      height: 5.5em;
+    }
+    .sort-bar,
+    .itinerary-filter-sort,
+    .messaging-container {
+      opacity: 1;
+    }
+  }
+
+  .flights {
+    .flight-item {
+      height: 4.75em;
+      opacity: 0;
+      transform: translateY(120%);
+      -webkit-transform: translateZ(0);
+      transition: all .4s cubic-bezier(.62,.28,.23,.99);
+      will-change: transform, position;
+    }
+
+    &.active {
+      opacity: 1;
+      .flight-item {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateY(0);
+        &.active {
+          transition-delay: 0;
+          height: 50em;
+          background: $white;
+          margin: 1em;
+          box-shadow: 0 4px 14px rgba(0,0,0, 0.45);
+        }
+      }
+    }
+  }
+}
+
+// Flight Details
+.flight-details {
+  border-top: 1px solid #CCC;
+  .route-info {
+    border-left: 2px solid #888;
+    margin-left: 1em;
+    padding-left: 1.25em;
+  }
+
+  .leg {
+    position: relative;
+    &:after {
+      content: " ";
+      position: absolute;
+      left: -1.8em;
+      top: 48%;
+      width: 1em;
+      height: 1em;
+      display: block;
+      border-radius: 200px;
+      background: #FFF;
+      border: 2px solid #555;
+    }
+    &:first-child:after {
+      top: 0;
+    }
+    &:last-child:after {
+      top: auto;
+      bottom: 0;
+    }
+    .air-info {
+      color: #666;
+      font-size: 0.875em;
+      .flight-no{
+        float: left;
+      }
+      .plane-type {
+        float: left;
+        margin-left: 1em;
+        i {
+          margin-right: 0.5em;
+        }
+      }
+    }
+
+    .airport {
+      abbr {
+        font-size: 0.875em;
+        margin-left: 0.875em;
+        color: #666;
+      }
+    }
+    time {
+      font-weight: 500;
+      display: block;
+    }
+
+    &.depart {
+      margin-bottom: 1em;
+    }
+    &.arrive {
+      margin-top: 1em;
+    }
+  }
+  .total-duration {
+    label {
+      display: block;
+      margin-left: 1em;
+      margin-top: 1em;
+      font-size: 1em;
+    }
+  }
+  .actions {
+    overflow: hidden;
+    border-top: 1px solid $light-gray;
+    background: $primaryColor;
+    @media only screen and (max-width: 358px) {
+      font-size: 12px;
+    }
+
+    a {
+      margin: 1em;
+      display: block;
+      color: $white;
+    }
+  }
+}
+
+.loading-indicator {
+  position: absolute;
+  top: 3.5em;
+  left: 1em;
+  right: 1em;
+  -webkit-perspective: 600;
+  -webkit-perspective-origin: 50% 50%;
+  opacity: 0;
+  transition: all 750ms ease-in-out;
+  pointer-events: none;
+  transform: translateY(33%);
+  text-align: center;
+  i {
+    display: none;
+    margin-top: 1em;
+  }
+  span.message {
+    font-size: 1.25em;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+  }
+}
+
+.period-holder {
+  display: inline-block;
+  overflow: hidden;
+  width: 1em;
+  position: absolute;
+  margin-left: 0.25em;
+  .periods {
+    position: relative;
+    left: 0;
+    animation-duration: 4s;
+    animation-name: sizeRight;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    line-height: 0.7;
+  }
+}
